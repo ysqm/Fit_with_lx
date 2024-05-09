@@ -1,0 +1,86 @@
+<view class="flex-col page">
+  <view class="flex-col flex-1 group_5">
+    <view class="flex-col section">
+      <text class="self-start font_2 text_6">Devices</text>
+      <view class="mt-50 flex-row justify-between items-center self-stretch group_6">
+        <view class="flex-row">
+          <image
+            class="shrink-0 image_6"
+            src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=06681e1a33347e1f8520f0537efe9849.png"
+          />
+          <view class="ml-20 flex-col shrink-0 group_7">
+            <text class="self-start font text_7">Mobile Track</text>
+            <text class="mt-4 self-stretch text_8">Linked to another device.</text>
+          </view>
+        </view>
+        <view class="flex-col group_8">
+          <view class="section_2"></view>
+          <view class="mt-2 section_2"></view>
+          <view class="mt-2 section_2"></view>
+        </view>
+      </view>
+      <view class="mt-50 flex-row items-center self-start group_9">
+        <image
+          class="shrink-0 image_7"
+          src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=88cb4e9fb084f2ccbdd8804433c85237.png"
+        />
+        <text class="flex-1 font text_9 ml-13">Set up a device</text>
+      </view>
+    </view>
+    <view class="mt-40 flex-col group_10">
+      <view class="flex-row justify-between items-center">
+        <view class="flex-row items-center">
+          <image
+            class="shrink-0 image_8"
+            src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=04b656fa2590024b9b3603c1f7c0ce95.png"
+          />
+          <text class="font_2 text_10 ml-23">Goals</text>
+        </view>
+        <image
+          class="image_9"
+          src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=6c0e2f03ecb69c817117e418d95b6bd2.png"
+        />
+      </view>
+      <view class="flex-row justify-between items-center group_11">
+        <view class="flex-row items-center">
+          <image
+            class="shrink-0 image_10"
+            src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=84f72bc2412d390dc941732caec90268.png"
+          />
+          <text class="font text_11 ml-17">See More</text>
+        </view>
+        <image
+          class="image_9"
+          src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=718856a8648cb4d75623571968237b95.png"
+        />
+      </view>
+      <view class="flex-row justify-between items-center group_12">
+        <view class="flex-row items-center">
+          <image
+            class="shrink-0 image_11"
+            src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=eed684b05290c483217005e1a7b97d7a.png"
+          />
+          <text class="ml-20 font text_12">Privacy & Security</text>
+        </view>
+        <image
+          class="image_9"
+          src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=718856a8648cb4d75623571968237b95.png"
+        />
+      </view>
+      <view class="flex-row justify-between items-center group_13">
+        <view class="flex-row items-center">
+          <image
+            class="shrink-0 image_10"
+            src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=1038540ababa947d659ff42bbecc018d.png"
+          />
+          <text class="ml-16 font text_13">Advanced Settings</text>
+        </view>
+        <image
+          class="image_9"
+          src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=718856a8648cb4d75623571968237b95.png"
+        />
+      </view>
+      <view class="flex-col justify-start items-center text-wrapper_2"><text class="font text_14">Log Out</text></view>
+    </view>
+  </view>
+</view>

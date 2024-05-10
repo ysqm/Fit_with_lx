@@ -1,0 +1,161 @@
+/* 用户信息 */
+.user-info{
+  width: 100%;
+  height: 280rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 32rpx;
+  margin-bottom: 20rpx;
+  background: #fff;
+}
+.user-info .avatar{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  background: #dcdcdc;
+}
+.user-info .info{
+  flex: 1;
+  height: 85rpx;
+  padding-left: 30rpx;
+}
+.user-info .name{
+  display: inline-block;
+  font-size: 38rpx;
+}
+
+.ml-13 {
+  margin-left: 26rpx;
+}
+.ml-23 {
+  margin-left: 46rpx;
+}
+.ml-17 {
+  margin-left: 34rpx;
+}
+.page {
+  background-color: #ffffff;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 100%;
+}
+.font {
+  font-size: 28rpx;
+  font-family: Poppins;
+  line-height: 34rpx;
+  color: #233a58;
+}
+.font_2 {
+  font-size: 28rpx;
+  font-family: Poppins;
+  line-height: 21.64rpx;
+  color: #233a58;
+}
+.group_5 {
+  overflow-y: auto;
+}
+.section {
+  padding: 48rpx 40rpx;
+  background-color: #f9f9f9;
+}
+.text_6 {
+  line-height: 21.98rpx;
+}
+.group_6 {
+  padding-left: 10rpx;
+}
+.image_6 {
+  border-radius: 8rpx;
+  width: 42rpx;
+  height: 68rpx;
+}
+.group_7 {
+  width: 274.28rpx;
+}
+.text_7 {
+  text-align: center;
+  padding-top: 18rpx;
+  width: 168rpx;
+}
+.text_8 {
+  color: #637487;
+  font-size: 24rpx;
+  font-family: Poppins;
+  font-weight: 300;
+  line-height: 28rpx;
+  text-align: center;
+}
+.group_8 {
+  width: 8rpx;
+}
+.section_2 {
+  background-color: #233a58;
+  border-radius: 50%;
+  height: 8rpx;
+}
+.group_9 {
+  width: 270rpx;
+}
+.image_7 {
+  border-radius: 50%;
+  width: 64rpx;
+  height: 64rpx;
+}
+.text_9 {
+  text-align: center;
+}
+.group_10 {
+  padding: 0 40rpx;
+}
+.image_8 {
+  width: 30rpx;
+  height: 40rpx;
+}
+.text_10 {
+  line-height: 20.92rpx;
+}
+.image_9 {
+  width: 18rpx;
+  height: 32rpx;
+}
+.group_11 {
+  margin-top: 68rpx;
+}
+.image_10 {
+  width: 40rpx;
+  height: 40rpx;
+}
+.text_11 {
+  text-align: center;
+  width: 122rpx;
+}
+.group_12 {
+  margin-top: 68rpx;
+}
+.image_11 {
+  width: 36rpx;
+  height: 40rpx;
+}
+.text_12 {
+  text-align: center;
+  width: 228rpx;
+}
+.group_13 {
+  margin-top: 68rpx;
+}
+.text_13 {
+  text-align: center;
+  width: 228rpx;
+}
+.text-wrapper_2 {
+  margin-top: 86rpx;
+  padding: 36rpx 0 24rpx;
+  background-color: #ff7443;
+  border-radius: 20rpx;
+}
+.text_14 {
+  color: #ffffff;
+  text-align: center;
+}

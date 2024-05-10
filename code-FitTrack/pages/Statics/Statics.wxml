@@ -1,0 +1,128 @@
+<view class="flex-col page">
+  <view class="flex-col group">
+    <view class="flex-row justify-between items-center group_3">
+      <view class="flex-row items-end">
+        <image
+          class="shrink-0 image_4"
+          src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=2424bf0fe0bbd2a33d5409e00b444521.png"
+        />
+        <text class="text_2 ml-73">Today, June 15</text>
+      </view>
+      <image
+        class="image_5"
+        src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=f218c9b08d4a15fc92fd18103dc84d8e.png"
+      />
+    </view>
+    <view class="flex-row items-center equal-division">
+      <view class="flex-col items-center equal-division-item">
+        <text class="font">Mon</text>
+        <text class="font_2 text_7 mt-15">10</text>
+      </view>
+      <view class="ml-24 flex-col items-center equal-division-item">
+        <text class="font">Tue</text>
+        <text class="font_2 mt-15">11</text>
+      </view>
+      <view class="ml-24 flex-col equal-division-item_4">
+        <text class="self-center font text_3">Wed</text>
+        <view class="flex-col justify-start items-center self-stretch text-wrapper mt-13">
+          <text class="font_2 text_11">12</text>
+        </view>
+      </view>
+      <view class="ml-24 flex-col items-center equal-division-item_2">
+        <text class="font text_4">Thu</text>
+        <text class="font_2 text_8 mt-15">13</text>
+      </view>
+      <view class="ml-24 flex-col items-center equal-division-item">
+        <text class="font">Fri</text>
+        <text class="mt-16 font_2">14</text>
+      </view>
+      <view class="ml-24 flex-col items-center equal-division-item_3">
+        <text class="font text_5">Sat</text>
+        <text class="font_2 text_9">15</text>
+        <view class="section"></view>
+      </view>
+      <view class="ml-24 flex-col items-center equal-division-item">
+        <text class="font text_6">Sun</text>
+        <text class="font_2 text_10 mt-15">16</text>
+      </view>
+      <view class="ml-24 flex-col items-center equal-division-item">
+        <text class="font">Mon</text>
+        <text class="font_2 mt-15">17</text>
+      </view>
+    </view>
+    <view class="flex-row justify-between group_4">
+      <view class="flex-col self-start group_6">
+        <view class="flex-row items-center">
+          <image
+            class="shrink-0 image_6"
+            src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=203a6061f8d5ce13df2fe61630346686.png"
+          />
+          <text class="font_3 text_12 ml-17">Walking</text>
+        </view>
+        <view class="mt-36 flex-row items-center">
+          <image
+            class="shrink-0 image_8"
+            src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=e7547f773b905ad91eefd7b9699b7ef8.png"
+          />
+          <text class="font_3 text_13 ml-21">Cycling</text>
+        </view>
+        <view class="mt-36 flex-row items-center">
+          <image
+            class="image_9"
+            src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=5df3bfcc8cfe0f826e8fdd070f80b1e8.png"
+          />
+          <text class="ml-18 font_3">Gym</text>
+        </view>
+      </view>
+      <view class="flex-col justify-start relative group_5">
+        <view class="flex-col justify-start items-center section_2">
+          <view class="flex-col justify-start items-center image-wrapper">
+            <image
+              class="image_7"
+              src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=96e8c575f39581713825eb0ee1374b7f.png"
+            />
+          </view>
+        </view>
+        <view bind:tap="go2inStatistics" class="flex-col justify-start items-end section_3 pos">
+          <view class="section_4 pos_2"></view>
+          <view class="flex-col justify-start items-start relative section_5"><view class="section_6"></view></view>
+          <view class="flex-col justify-start items-center section_7 pos_3"><view class="section_4"></view></view>
+        </view>
+      </view>
+    </view>
+    <view class="flex-col group_7">
+      <view class="flex-row justify-between items-center section_8">
+        <view class="flex-row items-center">
+          <image
+            class="image_6"
+            src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=203a6061f8d5ce13df2fe61630346686.png"
+          />
+          <view class="ml-34 flex-row items-baseline">
+            <text class="font_4">6025</text>
+            <text class="ml-6 font_2 text_14">Step</text>
+          </view>
+        </view>
+        <image
+          class="image_10"
+          src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=254d7c26541bcfa0795d9104f5b18977.png"
+        />
+      </view>
+      <view class="flex-row justify-between items-center section_8 mt-15">
+        <view class="flex-row items-center">
+          <image
+            class="image_8"
+            src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=e7547f773b905ad91eefd7b9699b7ef8.png"
+          />
+          <view class="flex-row items-baseline ml-31">
+            <text class="font_4">3.5</text>
+            <text class="font_2 text_15 ml-5">km</text>
+          </view>
+        </view>
+        <image
+          class="image_10"
+          src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=6677f4d6a9aaf6f89d8aa5d1136e4944.png"
+        />
+      </view>
+    </view>
+  </view>
+</view>

@@ -7,6 +7,46 @@
     "pages/Feed/Feed",
     "pages/Groups/Groups",
     "pages/Profile/Profile",
-    "pages/Edit_Profile/Edit_Profile"
-  ]
+    "pages/Edit_Profile/Edit_Profile",
+    "pages/Freinds/Freinds"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "FitTrack",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#515151",
+    "selectedColor": "#fbc346",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/Category_Page/Category_Page",
+        "iconPath": "/image/sports.png",
+        "selectedIconPath": "/image/sports.png",
+        "text": "运动"
+      },
+      {
+        "pagePath": "pages/Statics/Statics",
+        "iconPath": "/image/static.png",
+        "selectedIconPath": "/image/static.png",
+        "text": "数据"
+      },
+      {
+        "pagePath": "pages/Feed/Feed",
+        "iconPath": "/image/community.png",
+        "selectedIconPath": "/image/community.png",
+        "text": "社区"
+      },
+      {
+        "pagePath": "pages/Profile/Profile",
+        "iconPath": "/image/mine.png",
+        "selectedIconPath": "/image/mine.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
 }

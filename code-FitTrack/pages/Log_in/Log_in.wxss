@@ -6,7 +6,7 @@
   height: 100%;
 }
 .group {
-  padding: 254rpx 40rpx 136rpx;
+  padding: 124rpx 40rpx 106rpx;
   overflow-y: auto;
 }
 .image-wrapper {

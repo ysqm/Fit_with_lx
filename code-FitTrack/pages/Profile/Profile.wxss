@@ -1,3 +1,30 @@
+/* 用户信息 */
+.user-info{
+  width: 100%;
+  height: 280rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 32rpx;
+  margin-bottom: 20rpx;
+  background: #fff;
+}
+.user-info .avatar{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  background: #dcdcdc;
+}
+.user-info .info{
+  flex: 1;
+  height: 85rpx;
+  padding-left: 30rpx;
+}
+.user-info .name{
+  display: inline-block;
+  font-size: 38rpx;
+}
+
 .ml-13 {
   margin-left: 26rpx;
 }
@@ -27,7 +54,6 @@
   color: #233a58;
 }
 .group_5 {
-  padding: 62rpx 0 120rpx;
   overflow-y: auto;
 }
 .section {
@@ -50,6 +76,7 @@
 }
 .text_7 {
   text-align: center;
+  padding-top: 18rpx;
   width: 168rpx;
 }
 .text_8 {
@@ -120,7 +147,7 @@
 }
 .text_13 {
   text-align: center;
-  width: 256rpx;
+  width: 228rpx;
 }
 .text-wrapper_2 {
   margin-top: 86rpx;
@@ -131,5 +158,4 @@
 .text_14 {
   color: #ffffff;
   text-align: center;
-  width: 104rpx;
 }

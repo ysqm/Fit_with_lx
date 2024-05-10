@@ -1,12 +1,25 @@
 Page({
   data: {
+    userinfo: {},
+    sign_state: false
+  },
+  login(){
+    if(wx.getUserProfile({
+      desc: 'desc',
+    }))
+    {
+      this.setData({
+        sign_state: true
+      })
+    }
     
   },
-
   go2Category(){
-    wx.switchTab({
-      url: '/pages/Category_Page/Category_Page',
-    })
+    if(this.data.sign_state == true)
+      wx.switchTab({
+        url: '/pages/Category_Page/Category_Page',
+      })
+    
   },
   /**
    * 生命周期函数--监听页面加载

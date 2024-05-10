@@ -1,22 +1,5 @@
 <view class="flex-col page">
   <view class="flex-col group">
-    <view class="flex-row justify-between group_2">
-      <text class="text">9:41</text>
-      <view class="flex-row">
-        <image
-          class="image"
-          src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=78166194ac0aa6b7c48cf0a8f7fd40c4.png"
-        />
-        <image
-          class="image_2 ml-5"
-          src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=71d83e1e275a86bac6b0efede82714a9.png"
-        />
-        <image
-          class="image_3 ml-5"
-          src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=ec2740851214ef3af725b56c4fa536dc.png"
-        />
-      </view>
-    </view>
     <view class="flex-row justify-between items-center group_3">
       <view class="flex-row items-end">
         <image

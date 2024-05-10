@@ -142,24 +142,4 @@
       </view>
     </view>
   </view>
-  <view class="mt-28 flex-col justify-start items-center section_9">
-    <view class="flex-row">
-      <image
-        class="equal-division-item_5"
-        src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=c0e2c59d2bf7504d825be1006838554b.png"
-      />
-      <image
-        class="ml-68 equal-division-item_5"
-        src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=177c6af6e385de1b9940a78e6bcc1bf1.png"
-      />
-      <image
-        class="ml-68 equal-division-item_5"
-        src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=2dded29ab86089e5d258118c375782af.png"
-      />
-      <image
-        class="ml-68 equal-division-item_5"
-        src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=a86e473debc07e24ca45ebfdfffa0dd9.png"
-      />
-    </view>
-  </view>
 </view>

@@ -13,8 +13,9 @@
         <button type="primary" bind:tap="go2Category" style="position: relative; left: 0rpx; top: -275rpx">注册</button>
       </view>
       <view >
-        <button bind:tap="go2Category" style="position: relative; left: 0rpx; top: -225rpx">登录</button>
+        <button bind:tap="go2Category" style="position: relative; left: 0rpx; top: -225rpx" >登录</button>
       </view>
+      
     </view>
   </view>
 </view>

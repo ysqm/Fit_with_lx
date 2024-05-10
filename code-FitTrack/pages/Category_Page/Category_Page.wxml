@@ -81,26 +81,6 @@
         <text class="font_2 text_4 text_15">View All</text>
       </view>
     </view>
-    <view class="flex-col justify-start items-center section_5">
-      <view class="flex-row">
-        <image
-          class="equal-division-item_2"
-          src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=113c372de1e5866f751318fb692e9b45.png"
-        />
-        <image
-          bind:tap="go2Statistics"
-          class="ml-68 equal-division-item_2"
-          src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=cb3a3f4e6d6ae4548bdb198f52d3d03f.png"
-        />
-        <image
-          class="ml-68 equal-division-item_2"
-          src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=2dded29ab86089e5d258118c375782af.png"
-        />
-        <image
-          class="ml-68 equal-division-item_2"
-          src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=a86e473debc07e24ca45ebfdfffa0dd9.png"
-        />
-      </view>
-    </view>
+    
   </view>
 </view>

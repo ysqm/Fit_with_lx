@@ -1,0 +1,95 @@
+<view class="flex-col page">
+  <view class="flex-col flex-1 group_2">
+    <view class="flex-col group_3">
+      <view class="flex-row self-stretch group_4">
+        <text class="font text_2 text_3">feed</text>
+        <text class="font text_2 text_4">friends</text>
+        <text class="font text_2 text_5">groups</text>
+      </view>
+      <view class="flex-col justify-start items-center self-stretch text-wrapper">
+        <text class="font_2 text_6 text_7">Create a group</text>
+      </view>
+      <text class="self-start font_2 text_8">Open Groups</text>
+      <view class="flex-row self-start relative group_5">
+        <image
+          class="shrink-0 self-center image_6"
+          src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=19b7abdbe0d3bba33333e860aba9d8da.png"
+        />
+        <text class="shrink-0 self-start font_2 text_9">Daily Activity</text>
+        <image
+          class="shrink-0 self-start image_7 image_8"
+          src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=f748bb189fe4b991d2ca5d46beab3f2b.png"
+        />
+        <view class="flex-col button group_6">
+          <text class="self-end font_3 text_6 text_10">2.0M members</text>
+          <view class="flex-row justify-center self-stretch mt-41">
+            <image
+              class="image_6"
+              src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=13ac7237ac527672afa28e831a5764e7.png"
+            />
+            <view class="flex-col self-start group_7 ml-15">
+              <text class="font_2 text_11">Heart Health</text>
+              <text class="font_3 text_12 mt-5">1 M members</text>
+            </view>
+            <image
+              class="self-start image_7 image_9 ml-15"
+              src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=f748bb189fe4b991d2ca5d46beab3f2b.png"
+            />
+          </view>
+        </view>
+      </view>
+      <view class="flex-row items-center self-stretch group_8">
+        <image
+          class="shrink-0 image_6"
+          src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=0be4ab79dcf7a1ebb15d2be5fbfa9d7a.png"
+        />
+        <view class="ml-18 flex-col shrink-0 group_9">
+          <view class="flex-row self-stretch">
+            <text class="font_2 text_13">Mind & Body</text>
+            <image
+              class="shrink-0 image_7 ml-23"
+              src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=f748bb189fe4b991d2ca5d46beab3f2b.png"
+            />
+          </view>
+          <text class="mt-6 self-start font_3 text_14">1.9M members</text>
+        </view>
+      </view>
+      <view class="flex-row items-center self-stretch group_10">
+        <image
+          class="shrink-0 image_6"
+          src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=b1bc27fffcc803f1b4716bcb43180a02.png"
+        />
+        <view class="flex-col shrink-0 group_11 ml-17">
+          <view class="flex-row items-center">
+            <text class="font_2 text_13">Sleep Well</text>
+            <image
+              class="ml-8 shrink-0 image_7"
+              src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=f748bb189fe4b991d2ca5d46beab3f2b.png"
+            />
+          </view>
+          <text class="font_3 text_15 mt-5">2.0M members</text>
+        </view>
+      </view>
+    </view>
+    <view class="mt-72 flex-col justify-start items-center section">
+      <view class="flex-row">
+        <image
+          class="equal-division-item"
+          src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=c0e2c59d2bf7504d825be1006838554b.png"
+        />
+        <image
+          class="ml-68 equal-division-item"
+          src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=2e652af703922e6a25ab39582c364627.png"
+        />
+        <image
+          class="ml-68 equal-division-item"
+          src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=2dded29ab86089e5d258118c375782af.png"
+        />
+        <image
+          class="ml-68 equal-division-item"
+          src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=c6899932939e452fa1c792cf735a150b.png"
+        />
+      </view>
+    </view>
+  </view>
+</view>

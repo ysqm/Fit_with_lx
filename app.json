@@ -1,0 +1,12 @@
+{
+  "pages": [
+    "pages/Log_in/Log_in",
+    "pages/Category_Page/Category_Page",
+    "pages/Statics/Statics",
+    "pages/Inner_Static_Page/Inner_Static_Page",
+    "pages/Feed/Feed",
+    "pages/Groups/Groups",
+    "pages/Profile/Profile",
+    "pages/Edit_Profile/Edit_Profile"
+  ]
+}

@@ -1,0 +1,75 @@
+<view class="flex-col page">
+  <view class="flex-col flex-1 group_2">
+    <image
+      class="self-center image_5"
+      src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=17a3487f6d5dffd8d96e1543abbe8d7e.png"
+    />
+    <text class="self-center text_4">6025</text>
+    <text class="self-center font text_5">Goal: 7000 Steps</text>
+    <view class="flex-row equal-division">
+      <view class="flex-col group_3 equal-division-item">
+        <image
+          class="self-center image_6"
+          src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=2d723e7efa177d1c9b64678d3d4aeca3.png"
+        />
+        <view class="flex-col self-stretch mt-25">
+          <view class="flex-row justify-evenly items-baseline self-stretch">
+            <text class="font_2 text_6">3</text>
+            <text class="font_3">h</text>
+            <text class="font_2 text_7">12</text>
+            <text class="font_3 text_11">m</text>
+          </view>
+          <text class="mt-14 self-center font_4 text_12">Time</text>
+        </view>
+      </view>
+      <view class="flex-col group_3 equal-division-item">
+        <image
+          class="self-center image_7"
+          src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=92a2496d29e2e72128faf9bc49d8e8b3.png"
+        />
+        <view class="flex-col self-stretch group_4 mt-25">
+          <view class="flex-row items-baseline">
+            <text class="font_2 text_8">3.6</text>
+            <text class="ml-4 font_3">km</text>
+          </view>
+          <text class="mt-14 font_4 text_13">Distance</text>
+        </view>
+      </view>
+      <view class="flex-col group_3 equal-division-item">
+        <image
+          class="self-center image_6"
+          src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=5afe15e1a0b492e6b0f2dbe6a397df7d.png"
+        />
+        <view class="flex-col self-stretch mt-25">
+          <view class="flex-row items-baseline self-stretch">
+            <text class="font_2 text_9">241</text>
+            <text class="font_3 text_10 ml-5">kcal</text>
+          </view>
+          <text class="mt-14 self-center font_4 text_14">Calories</text>
+        </view>
+      </view>
+    </view>
+    <text class="self-start font text_15">1200 kc</text>
+    <view class="flex-col self-stretch group_5">
+      <view class="flex-col justify-start self-stretch relative group_6">
+        <view class="flex-col justify-start items-start relative section_2">
+          <text class="font text_16 text_17">400 kc</text>
+          <view class="flex-col justify-start items-end section pos_2"><view class="section_3"></view></view>
+        </view>
+        <text class="font text_16 pos">800 kc</text>
+      </view>
+      <text class="self-start font text_18">100 kc</text>
+    </view>
+    <view class="flex-row self-stretch group_7">
+      <view class="flex-col justify-start items-center text-wrapper"><text class="font_5 text_19">Daily</text></view>
+      <view class="flex-row ml-27">
+        <view class="flex-col justify-start items-center text-wrapper_2">
+          <text class="font_5 text_20">Weekly</text>
+        </view>
+        <view class="ml-20 flex-col justify-start items-center text-wrapper_3">
+          <text class="font_5 text_21">Monthly</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,62 @@
+.page {
+  background-color: #ffffff;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 100%;
+}
+.group {
+  padding: 154rpx 40rpx 0rpx;
+  overflow-y: auto;
+}
+.image-wrapper {
+  padding: 48rpx 0;
+  filter: drop-shadow(0rpx 0rpx 40rpx #d1d6e44d);
+  background-image: url('https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=332e3ee9941d56ef7bc000c304bdd31f.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width: 238rpx;
+}
+.image_4 {
+  width: 112rpx;
+  height: 140rpx;
+}
+.text_2 {
+  margin-top: 116rpx;
+  color: #233a58;
+  font-size: 40rpx;
+  font-family: Poppins;
+  line-height: 48rpx;
+  text-align: center;
+  width: 410rpx;
+}
+.group_2 {
+  margin-top: 388rpx;
+}
+.text-wrapper {
+  padding: 32rpx 0;
+  background-color: #30baa1;
+  border-radius: 20rpx;
+  box-shadow: 0rpx 0rpx 80rpx #d1d6e433;
+}
+.font {
+  font-size: 28rpx;
+  font-family: Poppins;
+  line-height: 34rpx;
+}
+.text_3 {
+  color: #ffffff;
+  text-align: center;
+  width: 140rpx;
+}
+.text-wrapper_2 {
+  padding: 32rpx 0;
+  background-color: #30baa133;
+  border-radius: 20rpx;
+  box-shadow: 0rpx 0rpx 80rpx #d1d6e433;
+}
+.text_4 {
+  color: #30baa1;
+  text-align: center;
+  width: 78rpx;
+}

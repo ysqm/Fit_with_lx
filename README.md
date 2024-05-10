@@ -1,2 +1,3 @@
-# Fit_with_lx
-lx don't want to be a human .He want to be the king of planet name as "锑".lx（ 出生的东曦)
+# FitTrack
+基于微信小程序的健身跟踪应用
+## 需求分析

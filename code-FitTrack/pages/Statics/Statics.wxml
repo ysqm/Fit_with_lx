@@ -100,7 +100,7 @@
             />
           </view>
         </view>
-        <view class="flex-col justify-start items-end section_3 pos">
+        <view bind:tap="go2inStatistics" class="flex-col justify-start items-end section_3 pos">
           <view class="section_4 pos_2"></view>
           <view class="flex-col justify-start items-start relative section_5"><view class="section_6"></view></view>
           <view class="flex-col justify-start items-center section_7 pos_3"><view class="section_4"></view></view>

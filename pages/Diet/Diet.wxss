@@ -1,0 +1,54 @@
+/* pages/diet/Diet.wxss */
+
+/* 容器样式 */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 顶部标题样式 */
+.meal {
+  margin-top: 20px;
+}
+
+/* 食物记录条目样式 */
+.food-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* 食物名称输入框样式 */
+.food-name {
+  flex: 1;
+  margin-right: 10px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* 食物数量输入框样式 */
+.food-quantity {
+  width: 80px;
+  margin-right: 10px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* 删除按钮样式 */
+.delete-btn {
+  background-color: #ff6347;
+  color: #fff;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  line-height: normal;
+  cursor: pointer;
+}
+
+/* 删除按钮在食物记录条目的最右侧 */
+.food-item .delete-btn {
+  margin-left: auto;
+}

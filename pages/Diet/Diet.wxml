@@ -1,0 +1,59 @@
+<!-- diet.wxml -->
+<view class="container">
+  <!-- 早餐部分 -->
+  <scroll-view scroll-y style="height: 300rpx;">
+    <view class="meal">
+      <text>早餐：</text>
+      <view class="food-list" data-meal="breakfast" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd">
+        <block wx:for="{{ breakfast }}" wx:key="index">
+          <view class="food-item" style="display:flex;">
+            <input class="food-name" placeholder="食物名称" bindinput="inputFood" data-meal="breakfast" data-index="{{ index }}" data-field="name" value="{{ breakfast[index].name }}" />
+            <input class="food-quantity" type="number" placeholder="食物数量" bindinput="inputFood" data-meal="breakfast" data-index="{{ index }}" data-field="quantity" value="{{ breakfast[index].quantity }}" />
+              <button class="delete-btn" bindtap="deleteFood" data-meal="breakfast" data-index="{{ index }}">删除</button>
+          </view>
+        </block>
+      </view>
+      <button bindtap="addFood" data-meal="breakfast">Add</button>
+    </view>
+  </scroll-view>
+
+  <!-- 午餐部分 -->
+  <scroll-view scroll-y style="height: 300rpx;">
+    <view class="meal">
+      <text>午餐：</text>
+      <view class="food-list" data-meal="lunch" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd">
+        <block wx:for="{{ lunch }}" wx:key="index">
+          <view class="food-item" style="display:flex;">         
+              <input class="food-name" placeholder="食物名称" bindinput="inputFood" data-meal="lunch" data-index="{{ index }}" data-field="name" value="{{ lunch[index].name }}"/>
+              <input class="food-quantity" type="number" placeholder="食物数量" bindinput="inputFood" data-meal="lunch" data-index="{{ index }}" data-field="quantity" value="{{ lunch[index].quantity }}" />            
+              <button class="delete-btn" bindtap="deleteFood" data-meal="lunch" data-index="{{ index }}">删除</button>
+          </view>
+        </block>
+      </view>
+      <button bindtap="addFood" data-meal="lunch">Add</button>
+    </view>
+  </scroll-view>
+
+  <!-- 晚餐部分 -->
+  <scroll-view scroll-y style="height: 300rpx;">
+    <view class="meal">
+      <text>晚餐：</text>
+      <view class="food-list" data-meal="dinner" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd">
+        <block wx:for="{{ dinner }}" wx:key="index">
+          <view class="food-item" style="display:flex;">
+              <input class="food-name" placeholder="食物名称" bindinput="inputFood" data-meal="dinner" data-index="{{ index }}" data-field="name" value="{{ dinner[index].name }}"/>
+              <input class="food-quantity" type="number" placeholder="食物数量" bindinput="inputFood" data-meal="dinner" data-index="{{ index }}" data-field="quantity" value="{{ dinner[index].quantity }}"/>            
+              <button class="delete-btn" bindtap="deleteFood" data-meal="dinner" data-index="{{ index }}">删除</button>
+          </view>
+        </block>
+      </view>
+      <button bindtap="addFood" data-meal="dinner">Add</button>
+    </view>
+  </scroll-view>
+
+  <!-- 总热量 -->
+  <view class="total">
+    <text>总热量：</text>
+    <text>{{ totalCalories }}</text>
+  </view>
+</view>

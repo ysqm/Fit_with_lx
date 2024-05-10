@@ -2,20 +2,20 @@
   <view class="flex-col flex-1 group_2">
     <view class="flex-col group_3">
       <view class="flex-row self-stretch group_4">
-        <text class="font text_2 text_3">feed</text>
-        <text class="font text_2 text_4">friends</text>
-        <text class="font text_2 text_5">groups</text>
+        <navigator class="font text_2 text_3" url="/pages/Feed/Feed" open-type="navigate">动态</navigator>
+        <navigator class="font text_2 text_4" url="/pages/Freinds/Freinds">好友</navigator>
+        <navigator class="font text_2 text_5" url="/pages/Groups/Groups" open-type="navigate">群聊</navigator>
       </view>
       <view class="flex-col justify-start items-center self-stretch text-wrapper">
-        <text class="font_2 text_6 text_7">Create a group</text>
+        <text class="font_2 text_6 text_7">创建群聊</text>
       </view>
-      <text class="self-start font_2 text_8">Open Groups</text>
+      <text class="self-start font_2 text_8">打开群聊</text>
       <view class="flex-row self-start relative group_5">
         <image
           class="shrink-0 self-center image_6"
           src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=19b7abdbe0d3bba33333e860aba9d8da.png"
         />
-        <text class="shrink-0 self-start font_2 text_9">Daily Activity</text>
+        <text class="shrink-0 self-start font_2 text_9">日常活动</text>
         <image
           class="shrink-0 self-start image_7 image_8"
           src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=f748bb189fe4b991d2ca5d46beab3f2b.png"
@@ -72,24 +72,6 @@
       </view>
     </view>
     <view class="mt-72 flex-col justify-start items-center section">
-      <view class="flex-row">
-        <image
-          class="equal-division-item"
-          src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=c0e2c59d2bf7504d825be1006838554b.png"
-        />
-        <image
-          class="ml-68 equal-division-item"
-          src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=2e652af703922e6a25ab39582c364627.png"
-        />
-        <image
-          class="ml-68 equal-division-item"
-          src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=2dded29ab86089e5d258118c375782af.png"
-        />
-        <image
-          class="ml-68 equal-division-item"
-          src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=c6899932939e452fa1c792cf735a150b.png"
-        />
-      </view>
     </view>
   </view>
 </view>

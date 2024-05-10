@@ -1,22 +1,5 @@
 <view class="flex-col page">
   <view class="flex-col group">
-    <view class="flex-row justify-between group_2">
-      <text class="text">9:41</text>
-      <view class="flex-row">
-        <image
-          class="image"
-          src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=78166194ac0aa6b7c48cf0a8f7fd40c4.png"
-        />
-        <image
-          class="image_2 ml-5"
-          src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=71d83e1e275a86bac6b0efede82714a9.png"
-        />
-        <image
-          class="image_3 ml-5"
-          src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=ec2740851214ef3af725b56c4fa536dc.png"
-        />
-      </view>
-    </view>
     <view class="flex-row justify-between items-center group_3">
       <view class="flex-row items-end">
         <image
@@ -140,26 +123,23 @@
           src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=6677f4d6a9aaf6f89d8aa5d1136e4944.png"
         />
       </view>
-    </view>
-  </view>
-  <view class="mt-28 flex-col justify-start items-center section_9">
-    <view class="flex-row">
-      <image
-        class="equal-division-item_5"
-        src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=c0e2c59d2bf7504d825be1006838554b.png"
-      />
-      <image
-        class="ml-68 equal-division-item_5"
-        src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=177c6af6e385de1b9940a78e6bcc1bf1.png"
-      />
-      <image
-        class="ml-68 equal-division-item_5"
-        src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=2dded29ab86089e5d258118c375782af.png"
-      />
-      <image
-        class="ml-68 equal-division-item_5"
-        src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=a86e473debc07e24ca45ebfdfffa0dd9.png"
-      />
+<view bind:tap="go2diet" class="flex-row justify-between items-center section_8 mt-15">
+        <view class="flex-row items-center">
+          <image
+            class="image_8"
+            src="https://cn.bing.com/images/search?view=detailV2&ccid=RRuQceTh&id=02285C2A40CCCFE1A6F0D2A6F8DACB59732D6C60&thid=OIP.RRuQceThQQAWHJh8aU6VLQAAAA&mediaurl=https%3a%2f%2fts1.cn.mm.bing.net%2fth%2fid%2fR-C.451b9071e4e14100161c987c694e952d%3frik%3dYGwtc1nL2vim0g%26riu%3dhttp%253a%252f%252fpic.616pic.com%252fys_img%252f00%252f88%252f42%252frBLAQn0w5m.jpg%26ehk%3dt8oOHIEWo4amVLnnHmLypk7uWFCzCbiB1GtZBoSxkHQ%253d%26risl%3d%26pid%3dImgRaw%26r%3d0%26sres%3d1%26sresct%3d1%26srh%3d800%26srw%3d800&exph=260&expw=260&q=%e5%b0%8f%e7%81%ab%e8%8b%97%e5%b0%8f%e5%9b%be%e6%a0%87&simid=608003735928337379&FORM=IRPRST&ck=DF02F1ECDB5F6A58950A0DEA3AF19C56&selectedIndex=1&itb=0"
+          />
+          <view class="flex-row items-baseline ml-31">
+            <text class="font_4">100</text>
+            <text class="font_2 text_15 ml-5">kcal</text>
+          </view>
+        </view>
+        <image
+          class="image_10"
+          src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=6677f4d6a9aaf6f89d8aa5d1136e4944.png"
+        />
+      </view>
+
     </view>
   </view>
 </view>

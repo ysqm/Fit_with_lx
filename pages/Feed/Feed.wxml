@@ -3,12 +3,12 @@
     <view class="flex-col group_3">
       <view class="flex-col section">
         <view class="flex-row group_4">
-          <text class="font text_2 text_3">feed</text>
-          <text class="font text_2 text_4">friends</text>
-          <text class="font text_2 text_5">groups</text>
+          <navigator class="font text_2 text_3" url="/pages/Feed/Feed" open-type="navigate">动态</navigator>
+          <navigator class="font text_2 text_4" url="/pages/Freinds/Freinds">好友</navigator>
+          <navigator class="font text_2 text_5" url="/pages/Groups/Groups" open-type="navigate">群聊</navigator>
         </view>
         <view class="flex-row justify-between items-center section_2">
-          <text class="font_2 text_6">What are you up to?</text>
+          <input class="font_2 text_6" type="text" placeholder="输入你要查找的消息" bindinput='getFilter'/>
           <view class="flex-row">
             <image
               class="image_6"
@@ -76,24 +76,6 @@
       <view class="flex-col justify-start self-stretch relative group_9 mt-15">
         <view class="section_4"></view>
         <view class="flex-col justify-start items-center section_3 pos">
-          <view class="flex-row">
-            <image
-              class="equal-division-item"
-              src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=c0e2c59d2bf7504d825be1006838554b.png"
-            />
-            <image
-              class="ml-68 equal-division-item"
-              src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=cb3a3f4e6d6ae4548bdb198f52d3d03f.png"
-            />
-            <image
-              class="ml-68 equal-division-item"
-              src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=2dded29ab86089e5d258118c375782af.png"
-            />
-            <image
-              class="ml-68 equal-division-item"
-              src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=c6899932939e452fa1c792cf735a150b.png"
-            />
-          </view>
         </view>
       </view>
     </view>

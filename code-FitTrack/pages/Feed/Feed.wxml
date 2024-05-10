@@ -1,0 +1,83 @@
+<view class="flex-col page">
+  <view class="flex-col flex-1 group_2">
+    <view class="flex-col group_3">
+      <view class="flex-col section">
+        <view class="flex-row group_4">
+          <navigator class="font text_2 text_3" url="/pages/Feed/Feed" open-type="navigate">动态</navigator>
+          <navigator class="font text_2 text_4" url="/pages/Freinds/Freinds">好友</navigator>
+          <navigator class="font text_2 text_5" url="/pages/Groups/Groups" open-type="navigate">群聊</navigator>
+        </view>
+        <view class="flex-row justify-between items-center section_2">
+          <input class="font_2 text_6" type="text" placeholder="输入你要查找的消息" bindinput='getFilter'/>
+          <view class="flex-row">
+            <image
+              class="image_6"
+              src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=9627f567aaa9d89bd89f5ed642312000.png"
+            />
+            <image
+              class="ml-14 image_7"
+              src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=bd49d0ebee8f95b2285b03ae7c1589ac.png"
+            />
+            <image
+              class="ml-14 image_8"
+              src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=1f7952e5bfaca48cbe5d8a4e9335f3f2.png"
+            />
+          </view>
+        </view>
+        <view class="flex-col group_5">
+          <view class="flex-row justify-between">
+            <view class="flex-row">
+              <image
+                class="shrink-0 image_9"
+                src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=cf8f15219775886a29cfefa63ccfc896.png"
+              />
+              <view class="flex-col shrink-0 self-center group_6">
+                <text class="self-stretch font text_7">Shannon D.</text>
+                <text class="self-start font_2 text_8 mt-5">Shared with</text>
+              </view>
+              <text class="shrink-0 self-start font_3 text_9">Strength Traning</text>
+            </view>
+            <image
+              class="self-start image_10"
+              src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=d4a682b4169e14e720ba286bf3a8de9e.png"
+            />
+          </view>
+          <view class="flex-col group_7 mt-19">
+            <text class="self-stretch font_3 text_10">new kitten..... I figure I already have one emotional</text>
+            <text class="mt-4 self-end font_3 text_11">support cat</text>
+          </view>
+        </view>
+      </view>
+      <image
+        class="shrink-0 image_11"
+        src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=a740bf8628ada8c6549d5e5a9d018364.png"
+      />
+    </view>
+    <view class="mt-18 flex-col">
+      <view class="flex-row justify-between items-center self-center group_8">
+        <view class="flex-row items-center">
+          <view class="flex-row items-center">
+            <image
+              class="shrink-0 image_12"
+              src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=a12da3ec0abab70f4f178ee67ad6d398.png"
+            />
+            <text class="ml-8 font_4">141</text>
+          </view>
+          <view class="flex-row items-center ml-17">
+            <image
+              class="shrink-0 image_13"
+              src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=13598c7aeefc07bc72cfadb1d43d3749.png"
+            />
+            <text class="font_4 text_12 ml-7">7</text>
+          </view>
+        </view>
+        <text class="font_3 text_13">9 hour ago</text>
+      </view>
+      <view class="flex-col justify-start self-stretch relative group_9 mt-15">
+        <view class="section_4"></view>
+        <view class="flex-col justify-start items-center section_3 pos">
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,99 @@
+<view class="flex-col page">
+  <view class="flex-col flex-1 group_6">
+    <view class="flex-col self-center relative group_5">
+      <view class="flex-col justify-start self-stretch relative">
+        <view class="flex-col justify-start items-start relative section_3">
+          <image
+            class="image_11"
+            src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=81be9b3da884466a310cc23b5d0318d7.png"
+          />
+          <image
+            class="image_7 pos_2"
+            src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=5e7bda42ad2aff388249f31e2872de6f.png"
+          />
+          <image
+            class="image_6 pos"
+            src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=ca04f10cbcdd66ef78d10620b09b4647.png"
+          />
+          <image
+            class="image_10 pos_5"
+            src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=a4e84043b835c0ed09ae4b8abea4e721.png"
+          />
+        </view>
+        <image
+          class="image_8 pos_3"
+          src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=4b35022560e97947626ac3d841f8483f.png"
+        />
+        <image
+          class="image_9 pos_4"
+          src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=d835fc11096188f50d847f9fb3b6392d.png"
+        />
+      </view>
+      <text class="mt-20 self-center text_3">Saif U.</text>
+    </view>
+    <view class="flex-row items-center self-stretch group_7">
+      <image
+        class="image_12"
+        src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=0c2396ad630b58c9df7ab3794e155b36.png"
+      />
+      <text class="ml-30 font text_4">Personal</text>
+    </view>
+    <view class="flex-row justify-between items-center self-start group_8">
+      <image
+        class="image_13"
+        src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=9f1ba8f5f4e1bb4a28f0e682e584f3b2.png"
+      />
+      <text class="font text_5">Badges and Trophies</text>
+    </view>
+    <view class="flex-row items-center self-stretch group_9">
+      <image
+        class="image_14"
+        src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=2a6ce72cd14e7f10ffb044a69efd0734.png"
+      />
+      <text class="ml-28 font text_6">Groups</text>
+    </view>
+    <view class="flex-row justify-between items-center self-start group_10">
+      <image
+        class="image_15"
+        src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=4607ecd1913637aec662d2b8d75cfc05.png"
+      />
+      <text class="font text_7">Guided Programs</text>
+    </view>
+    <view class="flex-col self-stretch group_11">
+      <view class="flex-row justify-between group_12">
+        <text class="font text_8">Friends . 112</text>
+        <text class="font text_9">View All</text>
+      </view>
+      <view class="flex-row horiz-list mt-15">
+        <image
+          class="image_16 horiz-list-item"
+          src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=f89aee695f378658f02d4365775b6885.png"
+        />
+        <image
+          class="ml-18 image_16 horiz-list-item"
+          src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=9e6852f418f964e658705432457e4327.png"
+        />
+        <image
+          class="ml-18 image_16 horiz-list-item"
+          src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=9f0ceb692611342764261d25b3b96284.png"
+        />
+        <image
+          class="ml-18 image_16 horiz-list-item"
+          src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=e8e72fca2cfce8381a7badae411470b2.png"
+        />
+        <image
+          class="ml-18 image_16 horiz-list-item"
+          src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=11c71c7b25a03bdb4f1a2040207b7808.png"
+        />
+        <image
+          class="ml-18 image_16 horiz-list-item"
+          src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=9b3dedb1452149383445a9c5a1000536.png"
+        />
+      </view>
+    </view>
+    <view class="flex-col justify-start items-center self-stretch text-wrapper">
+      <text class="font text_10">Add Friends</text>
+    </view>
+    <text class="self-start text_11">Posts</text>
+  </view>
+</view>

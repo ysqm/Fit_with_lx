@@ -8,6 +8,13 @@
     "miniprogram": {
       "list": [
         {
+          "name": "pages/Physics/Physics",
+          "pathName": "pages/Physics/Physics",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "pages/Edit_Profile/Edit_Profile",
           "pathName": "pages/Edit_Profile/Edit_Profile",
           "query": "",

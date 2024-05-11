@@ -123,7 +123,7 @@
           src="/image/zhexian_red.png"
         />
       </view>
-<view class="flex-row justify-between items-center section_8 mt-15" style="position: relative; left: -2rpx; top: -268rpx">
+<view bind:tap="go2diet" class="flex-row justify-between items-center section_8 mt-15" style="position: relative; left: -2rpx; top: -268rpx">
         <view class="flex-row items-center">
           <image style="width: 52rpx; height: 66rpx; display: block; box-sizing: border-box"
             class="image_8"
@@ -139,7 +139,7 @@
           src="/image/zhexian_red.png"
         />
       </view>
-<view class="flex-row justify-between items-center section_8 mt-15" style="width: 670rpx; height: 156rpx; display: flex; box-sizing: border-box; position: relative; left: -2rpx; top: -285rpx">
+<view bind:tap="go2Physics" class="flex-row justify-between items-center section_8 mt-15" style="width: 670rpx; height: 156rpx; display: flex; box-sizing: border-box; position: relative; left: -2rpx; top: -285rpx">
         <view class="flex-row items-center">
           <image style="width: 64rpx; height: 78rpx; display: block; box-sizing: border-box"
             class="image_8"

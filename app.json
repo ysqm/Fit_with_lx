@@ -9,8 +9,8 @@
     "pages/Profile/Profile",
     "pages/Edit_Profile/Edit_Profile",
     "pages/Freinds/Freinds",
-    "pages/physics/physics",
-    "pages/Diet/Diet"
+    "pages/Diet/Diet",
+    "pages/Physics/Physics"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -12,8 +12,9 @@
 .image-wrapper {
   padding: 48rpx 0;
   filter: drop-shadow(0rpx 0rpx 40rpx #d1d6e44d);
-  background-image: url('https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=332e3ee9941d56ef7bc000c304bdd31f.png');
   background-size: 100% 100%;
+  background-color: #30baa1;
+  border-radius: 60rpx;
   background-repeat: no-repeat;
   width: 238rpx;
 }

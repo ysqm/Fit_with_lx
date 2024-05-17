@@ -36,7 +36,7 @@
       </view>
     </view>
     <view class="mt-40 flex-col group_10">
-      <view class="flex-row justify-between items-center">
+      <view bind:tap="go2Goal" class="flex-row justify-between items-center">
         <view class="flex-row items-center">
           <image
             class="shrink-0 image_8"

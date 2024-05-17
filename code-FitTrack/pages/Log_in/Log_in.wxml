@@ -1,6 +1,6 @@
 <view class="flex-col page">
   <view class="flex-col flex-1 group" style="width: 750rpx; height: auto; display: flex; box-sizing: border-box">
-    <view class="flex-col justify-start items-center self-center image-wrapper">
+    <view class="flex-col justify-start items-center self-center image-wrapper" >
       <image
         class="image_4"
         src="/image/login.png"

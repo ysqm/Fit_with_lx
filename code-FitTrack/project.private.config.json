@@ -8,6 +8,20 @@
     "miniprogram": {
       "list": [
         {
+          "name": "pages/Goal/Goal",
+          "pathName": "pages/Goal/Goal",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/Diet/Diet",
+          "pathName": "pages/Diet/Diet",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "pages/Physics/Physics",
           "pathName": "pages/Physics/Physics",
           "query": "",

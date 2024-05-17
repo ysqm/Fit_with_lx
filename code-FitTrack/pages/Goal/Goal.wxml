@@ -1,0 +1,42 @@
+<!--pages/Goal/Goal.wxml-->
+<view class="container">
+  <view class="title">设定健身目标</view>
+
+  <!-- 选择健身目标类型 -->
+  <view class="item">
+    <text class="label">健身目标类型：</text>
+    <picker mode="selector" value="{{goalIndex}}" range="{{goals}}" bindchange="changeGoalType">
+      <view class="picker">
+        {{goals[goalIndex]}}
+        <text>></text>
+      </view>
+    </picker>
+  </view>
+
+  <!-- 输入目标身高 -->
+  <view class="item">
+    <text class="label">目标身高（cm）：</text>
+    <input type="number" value="{{height}}" bindinput="inputHeight" />
+  </view>
+
+  <!-- 输入目标体重 -->
+  <view class="item">
+    <text class="label">目标体重（kg）：</text>
+    <input type="number" value="{{weight}}" bindinput="inputWeight" />
+  </view>
+
+  <!-- 输入目标体脂率 -->
+  <view class="item">
+    <text class="label">目标体脂率（%）：</text>
+    <input type="number" value="{{bodyFat}}" bindinput="inputBodyFat" />
+  </view>
+
+  <!-- 输入目标运动时长 -->
+  <view class="item">
+    <text class="label">目标运动时长（分钟）：</text>
+    <input type="number" value="{{exerciseDuration}}" bindinput="inputExerciseDuration" />
+  </view>
+
+  <!-- 确认按钮 -->
+  <button class="confirm-btn" bindtap="confirmGoal">确认</button>
+</view>

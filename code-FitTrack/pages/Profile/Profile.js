@@ -13,6 +13,11 @@ Page({
       url: '/pages/Edit_Profile/Edit_Profile',
     })
   },
+  go2Goal(){
+    wx.navigateTo({
+      url: '/pages/Goal/Goal',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

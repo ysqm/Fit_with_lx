@@ -1,9 +1,15 @@
 wx.request({
-  url:'',
+  url:'fittrack.tengdingkang.fun',
+  data:{
+    info:'test',
+    number:1,
+  }
   method:'GET',
   header:{
     'Content-Type':'application/json' //set request header//
   },
+  dataType:'json',
+  responseType:'text',
   success:(res)=>{
     if (res.statusCode===200){
       console.log(res.data);

@@ -130,7 +130,7 @@
             src="/image/cal.png"
           />
           <view class="flex-row items-baseline ml-31">
-            <text class="font_4">305</text>
+            <text class="font_4">{{totalCalories}}</text>
             <text class="font_2 text_15 ml-5">kcal</text>
           </view>
         </view>

@@ -8,6 +8,13 @@
     "miniprogram": {
       "list": [
         {
+          "name": "pages/Run/Run",
+          "pathName": "pages/Run/Run",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "pages/Goal/Goal",
           "pathName": "pages/Goal/Goal",
           "query": "",

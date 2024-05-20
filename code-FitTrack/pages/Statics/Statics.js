@@ -1,5 +1,7 @@
 Page({
-  data: {},
+  data: {
+    totalCalories: 0, // 初始化为0，等待从本地缓存中获取
+  },
 
   onShareAppMessage() {
     return {};
@@ -18,5 +20,14 @@ Page({
     wx.navigateTo({
       url: '/pages/Physics/Physics',
     })
+  },
+  onLoad() {
+    // 在页面加载时从本地缓存中获取 totalCalories
+    const storageData = wx.getStorageSync('dietData');
+    if (storageData) {
+      this.setData({
+        totalCalories: storageData.totalCalories || 0,
+      });    
+    }
   }
 });

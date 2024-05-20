@@ -4,6 +4,7 @@ Page({
     totalCalories: 0, // 初始化为0，等待从本地缓存中获取
   },
   
+
   onLoad() {
     // 在页面加载时从本地缓存中获取 totalCalories
     const storageData = wx.getStorageSync('dietData');
@@ -13,7 +14,15 @@ Page({
       });    
     }
   },
-  
+  onShow: function () {
+    // 在页面加载时从本地缓存中获取 totalCalories
+    const storageData = wx.getStorageSync('dietData');
+    if (storageData) {
+      this.setData({
+        totalCalories: storageData.totalCalories || 0,
+      });    
+    }
+  },
 
   onShareAppMessage() {
     return {};

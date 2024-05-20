@@ -1,7 +1,8 @@
 // pages/diet/Diet.js
 import * as echarts from '../../ec-canvas/echarts';
 const foods = require('../../utils/foods.js');
-
+//获取页面栈
+var pages = getCurrentPages();
 Page({
 
   /**
@@ -31,7 +32,8 @@ Page({
         lunch: storageData.lunch || [],
         dinner: storageData.dinner || [],
         totalCalories: storageData.totalCalories || 0,
-      });    
+      });  
+
     }
     // 初始化饼图
     this.initChart();
@@ -214,6 +216,7 @@ Page({
     this.setData({
       totalCalories: total
     });
+    
   },
 
   // 触摸开始

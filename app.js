@@ -1,5 +1,5 @@
 // pages/community/community.js
-Page({
+App({
 
   /**
    * 页面的初始数据

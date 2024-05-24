@@ -12,7 +12,9 @@
     "pages/Physics/Physics",
     "pages/Diet/Diet",
     "pages/Goal/Goal",
-    "pages/Run/Run"
+    "pages/Run/Run",
+    "pages/Cycling/Cycling",
+    "pages/Gym/Gym"
   ],
   "window": {
     "backgroundTextStyle": "light",

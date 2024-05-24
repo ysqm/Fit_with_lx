@@ -8,6 +8,20 @@
     "miniprogram": {
       "list": [
         {
+          "name": "pages/Gym/Gym",
+          "pathName": "pages/Gym/Gym",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/Cycling/Cycling",
+          "pathName": "pages/Cycling/Cycling",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "pages/Run/Run",
           "pathName": "pages/Run/Run",
           "query": "",

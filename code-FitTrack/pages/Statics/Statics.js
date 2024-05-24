@@ -21,7 +21,16 @@ Page({
       url: '/pages/Physics/Physics',
     })
   },
-  onLoad() {
+  // onLoad() {
+  //   // 在页面加载时从本地缓存中获取 totalCalories
+  //   const storageData = wx.getStorageSync('dietData');
+  //   if (storageData) {
+  //     this.setData({
+  //       totalCalories: storageData.totalCalories || 0,
+  //     });    
+  //   }
+  // },
+  onShow: function () {
     // 在页面加载时从本地缓存中获取 totalCalories
     const storageData = wx.getStorageSync('dietData');
     if (storageData) {

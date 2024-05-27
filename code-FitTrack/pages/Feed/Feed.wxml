@@ -1,4 +1,3 @@
-<!-- community.wxml -->
 <view class="container">
   <!-- 用户发表的内容列表 -->
   <view wx:for="{{posts}}" wx:key="index">
@@ -17,7 +16,7 @@
       <view class="interaction">
         <!-- 点赞按钮 -->
         <button class="like-button" data-postid="{{item.id}}" bindtap="likePost">
-          <image class="like-icon" src="{{item.liked ? '/images/liked.png' : '/image/like.jpg'}}"></image>
+          <image class="like-icon" src="{{item.liked ? '/image/liked.png' : '/image/like.jpg'}}"></image>
           <text>{{item.likes}}</text>
         </button>
         <!-- 评论按钮 -->
@@ -28,4 +27,7 @@
       </view>
     </view>
   </view>
+
+  <!-- 添加发帖按钮 -->
+  <button class="new-post-button" bindtap="goToNewPost">+</button>
 </view>

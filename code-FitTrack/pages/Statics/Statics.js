@@ -1,6 +1,7 @@
 Page({
   data: {
     totalCalories: 0, // 初始化为0，等待从本地缓存中获取
+    bmi: 0,
   },
 
   onShareAppMessage() {
@@ -21,22 +22,21 @@ Page({
       url: '/pages/Physics/Physics',
     })
   },
-  // onLoad() {
-  //   // 在页面加载时从本地缓存中获取 totalCalories
-  //   const storageData = wx.getStorageSync('dietData');
-  //   if (storageData) {
-  //     this.setData({
-  //       totalCalories: storageData.totalCalories || 0,
-  //     });    
-  //   }
-  // },
+
   onShow: function () {
     // 在页面加载时从本地缓存中获取 totalCalories
-    const storageData = wx.getStorageSync('dietData');
-    if (storageData) {
+    const dietData = wx.getStorageSync('dietData');
+    if (dietData) {
       this.setData({
-        totalCalories: storageData.totalCalories || 0,
+        totalCalories: dietData.totalCalories || 0,
       });    
     }
+    const PhysicsData = wx.getStorageSync('PhysicsData');
+    if(PhysicsData){
+      this.setData({
+        bmi: PhysicsData.score || 0
+      })
+    }
+
   }
 });

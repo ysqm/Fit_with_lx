@@ -14,7 +14,8 @@
     "pages/Goal/Goal",
     "pages/Run/Run",
     "pages/Cycling/Cycling",
-    "pages/Gym/Gym"
+    "pages/Gym/Gym",
+    "pages/Post/Post"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -1,0 +1,4 @@
+<view class="container">
+  <textarea class="content-input" placeholder="分享你的故事..." bindinput="onContentInput"></textarea>
+  <button class="submit-button" bindtap="submitPost">发表</button>
+</view>

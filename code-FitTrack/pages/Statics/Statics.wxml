@@ -79,7 +79,7 @@
           <view class="flex-col justify-start items-center image-wrapper">
             <image
               class="image_7"
-              src="https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=96e8c575f39581713825eb0ee1374b7f.png"
+              src=""
             />
           </view>
         </view>
@@ -146,7 +146,7 @@
             src="/image/bmi.png"
           />
           <view class="flex-row items-baseline ml-31">
-            <text class="font_4">20</text>
+            <text class="font_4">{{bmi}}</text>
             <text class="font_2 text_15 ml-5">BMI</text>
           </view>
         </view>

@@ -56,4 +56,9 @@
     <text>总热量：</text>
     <text>{{ totalCalories }}</text>
   </view>
+
 </view>
+    <!-- 饼图 -->
+  <view class="container">
+    <ec-canvas style="width: 100%; height: 500px;" id="mychart" canvas-id="mychart" ec="{{ ec }}"></ec-canvas>
+  </view>

@@ -1,6 +1,7 @@
-/* community.wxss */
 .container {
   padding: 20rpx;
+  background-color: #f0f8ff;
+  min-height: 100vh;
 }
 
 .post {
@@ -56,4 +57,19 @@
   width: 30rpx;
   height: 30rpx;
   margin-right: 5rpx;
+}
+
+.new-post-button {
+  position: fixed;
+  bottom: 20rpx;
+  right: 20rpx;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 50%;
+  width: 80rpx;
+  height: 80rpx;
+  font-size: 40rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

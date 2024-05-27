@@ -1,4 +1,3 @@
-// community.js
 Page({
   data: {
     posts: [
@@ -46,9 +45,15 @@ Page({
   // 跳转至评论页面
   goToComment(event) {
     const postId = event.currentTarget.dataset.postid;
-    // 根据 postId 跳转至评论页面
     wx.navigateTo({
       url: `/pages/comment/comment?postId=${postId}`
+    });
+  },
+
+  // 跳转至发表新帖页面
+  goToNewPost() {
+    wx.navigateTo({
+      url: '/pages/Post/Post'
     });
   }
 });

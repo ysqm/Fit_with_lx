@@ -1,7 +1,8 @@
 // pages/diet/Diet.js
-
+import * as echarts from '../../ec-canvas/echarts';
 const foods = require('../../utils/foods.js');
-
+//获取页面栈
+var pages = getCurrentPages();
 Page({
 
   /**
@@ -14,6 +15,9 @@ Page({
     totalCalories: 0,
     startX: 0,
     startY: 0,
+    ec: {
+      lazyLoad: true // 延迟加载
+    }
   },
 
   /**
@@ -28,8 +32,11 @@ Page({
         lunch: storageData.lunch || [],
         dinner: storageData.dinner || [],
         totalCalories: storageData.totalCalories || 0,
-      });    
+      });  
+
     }
+    // 初始化饼图
+    this.initChart();
   },
 
   /**
@@ -86,6 +93,76 @@ Page({
   onShareAppMessage() {
 
   },
+
+  initChart() {
+    this.selectComponent('#mychart').init((canvas, width, height) => {
+      const chart = echarts.init(canvas, null, {
+        width: width,
+        height: height
+      });
+      canvas.setChart(chart);
+
+      const breakfastCalories = this.getTotalCalories(this.data.breakfast);
+      const lunchCalories = this.getTotalCalories(this.data.lunch);
+      const dinnerCalories = this.getTotalCalories(this.data.dinner);
+      const totalCalories = this.data.totalCalories;
+
+      const option = {
+        title: {
+          text: '饮食摄入比例',
+          left: 'center'
+        },
+        series: [{
+          name: '摄入比例',
+          type: 'pie',
+          radius: '55%',
+          data: [
+            {
+              value: breakfastCalories,
+              name: '早餐',
+              label: {
+                formatter: function (params) {
+                  return '早餐 ' + ((params.value / totalCalories) * 100).toFixed(2) + '%';
+                }
+              }
+            },
+            {
+              value: lunchCalories,
+              name: '午餐',
+              label: {
+                formatter: function (params) {
+                  return '午餐 ' + ((params.value / totalCalories) * 100).toFixed(2) + '%';
+                }
+              }
+            },
+            {
+              value: dinnerCalories,
+              name: '晚餐',
+              label: {
+                formatter: function (params) {
+                  return '晚餐 ' + ((params.value / totalCalories) * 100).toFixed(2) + '%';
+                }
+              }
+            }
+          ]
+        }]
+      };
+
+      chart.setOption(option);
+      return chart;
+    });
+  },
+
+  getTotalCalories(meal) {
+    let total = 0;
+    meal.forEach(item => {
+      const food = foods.find(food => food.name === item.name);
+      if (food) {
+        total += food.calories * parseInt(item.quantity);
+      }
+    });
+    return total;
+  },
   
   // 输入食物名称和数量
   inputFood(event) {
@@ -139,6 +216,7 @@ Page({
     this.setData({
       totalCalories: total
     });
+    
   },
 
   // 触摸开始

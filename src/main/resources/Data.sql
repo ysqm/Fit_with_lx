@@ -12,6 +12,7 @@ CREATE TABLE users (
                        registration_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+
 DROP TABLE IF EXISTS `data`;
 CREATE TABLE data (
                       id INT PRIMARY KEY AUTO_INCREMENT,

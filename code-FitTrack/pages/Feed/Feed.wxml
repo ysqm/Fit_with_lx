@@ -1,6 +1,9 @@
+<view class="search-container">
+  <input class="search-input" placeholder="搜索帖子..." bindinput="searchPosts" />
+</view>
 <view class="container">
   <!-- 用户发表的内容列表 -->
-  <view wx:for="{{posts}}" wx:key="index">
+  <view wx:for="{{filteredPosts}}" wx:key="index" class="post">
     <view class="post">
       <view class="user-info">
         <image class="avatar" src="{{item.avatar}}"></image>

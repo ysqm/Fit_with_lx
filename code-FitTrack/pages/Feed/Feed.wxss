@@ -1,3 +1,18 @@
+.search-container {
+  margin-bottom: 20rpx;
+  width: 100%;
+}
+
+.search-input {
+  padding: 20rpx;
+  border: 1rpx solid #ccc;
+  border-radius: 50rpx;
+  height: 100rpx;
+  width: 90%;
+  margin: 0 auto;
+  box-sizing: border-box; /* 确保padding不会增加宽度 */
+}
+
 .container {
   padding: 20rpx;
   background-color: #f0f8ff;

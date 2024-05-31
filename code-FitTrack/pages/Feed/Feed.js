@@ -22,9 +22,54 @@ Page({
         comments: 8
       },
       // 添加更多用户分享的内容
-    ]
+    ],
+    originalPosts: [], // 用于存储原始帖子列表的副本
+    filteredPosts: [], // 用于存储过滤后的帖子列表
+    searchKeyword: '', // 用于存储搜索关键字
+  },
+  onShow: function() {
+    // 保存原始帖子列表的副本
+    this.setData({
+      originalPosts: this.data.posts.slice(), // 使用slice()深拷贝数组
+      filteredPosts: this.data.posts.slice() // 初始化filteredPosts
+    });
+  },
+  // 这个方法将被post.js调用，以添加新帖子到列表
+  addNewPost(newPost) {
+    this.setData({
+      posts: [newPost, ...this.data.posts] // 将新帖子添加到帖子列表的开头
+    });
+    // 重置displayedPosts以显示更新后的帖子列表
+    this.setData({ displayedPosts: this.data.posts });
   },
 
+  // 搜索帖子
+  searchPosts: function(event) {
+    const keyword = event.detail.value.trim(); // 获取输入值并去除前后空格
+    this.setData({
+      searchKeyword: keyword
+    });
+
+    if (keyword === '') {
+      // 如果搜索框为空，恢复到原始帖子列表
+      this.setData({
+        filteredPosts: this.data.originalPosts.slice() // 使用slice()深拷贝数组
+      });
+    } else {
+      // 如果搜索框不为空，过滤帖子
+      this.filterPosts();
+    }
+  },
+
+  // 过滤帖子
+  filterPosts: function() {
+    const keyword = this.data.searchKeyword.toLowerCase();
+    const filtered = this.data.originalPosts.filter(post => {
+      return post.username.toLowerCase().includes(keyword) ||
+             post.content.toLowerCase().includes(keyword);
+    });
+    this.setData({ filteredPosts: filtered });
+  },
   // 点赞功能
   likePost(event) {
     const postId = event.currentTarget.dataset.postid;
@@ -57,3 +102,4 @@ Page({
     });
   }
 });
+

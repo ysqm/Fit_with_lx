@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.sky.entity.mapper.TotalCaloriesMapper">
+
+    <resultMap id="TotalCaloriesMap" type="com.sky.entity.TotalCalories">
+        <id column="id" property="id" />
+        <result column="date" property="date" />
+        <result column="total_calories" property="totalCalories" />
+    </resultMap>
+
+    <insert id="insertTotalCalories" parameterType="com.sky.entity.TotalCalories">
+        INSERT INTO total_calories (date, total_calories)
+        VALUES (#{date}, #{totalCalories})
+    </insert>
+
+    <select id="getTotalCalories" resultMap="TotalCaloriesMap">
+        SELECT * FROM total_calories ORDER BY date DESC LIMIT 1
+    </select>
+
+</mapper>

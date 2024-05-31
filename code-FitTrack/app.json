@@ -5,17 +5,17 @@
     "pages/Statics/Statics",
     "pages/Inner_Static_Page/Inner_Static_Page",
     "pages/Feed/Feed",
-    "pages/Groups/Groups",
     "pages/Profile/Profile",
     "pages/Edit_Profile/Edit_Profile",
-    "pages/Freinds/Freinds",
     "pages/Physics/Physics",
     "pages/Diet/Diet",
     "pages/Goal/Goal",
     "pages/Run/Run",
     "pages/Cycling/Cycling",
     "pages/Gym/Gym",
-    "pages/Post/Post"
+    "pages/Post/Post",
+    "pages/Comment/Comment",
+    "pages/Advice/Advice"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -46,7 +46,7 @@ Page({
   goToComment(event) {
     const postId = event.currentTarget.dataset.postid;
     wx.navigateTo({
-      url: `/pages/comment/comment?postId=${postId}`
+      url: `/pages/Comment/Comment?postId=${postId}`
     });
   },
 

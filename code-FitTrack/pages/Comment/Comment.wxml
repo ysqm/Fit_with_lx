@@ -1,0 +1,15 @@
+<view class="container">
+  <view class="comments-list">
+    <view wx:for="{{comments}}" wx:key="index" class="comment-item">
+      <view class="user-info">
+        <image class="avatar" src="{{item.avatar}}"></image>
+        <text class="username">{{item.username}}</text>
+      </view>
+      <view class="comment-content">
+        <text>{{item.content}}</text>
+      </view>
+    </view>
+  </view>
+  <textarea class="comment-input" placeholder="发表评论..." bindinput="onCommentInput"></textarea>
+  <button class="submit-comment-button" bindtap="submitComment">发表</button>
+</view>

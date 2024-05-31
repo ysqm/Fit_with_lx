@@ -1,0 +1,11 @@
+<view class="container">
+  <view class="input-section">
+    <input class="input-box" placeholder="请输入您的需求..." bindinput="onInput" />
+    <button class="suggest-button" bindtap="generateSuggestions">获取建议</button>
+  </view>
+  <view class="suggestions-section">
+    <view wx:for="{{suggestions}}" wx:key="index" class="suggestion-item">
+      <text>{{item}}</text>
+    </view>
+  </view>
+</view>

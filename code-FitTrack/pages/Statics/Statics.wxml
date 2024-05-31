@@ -6,7 +6,7 @@
           class="shrink-0 image_4"
           src="/image/head.png"
         />
-        <text class="text_2 ml-73">Today, June 15</text>
+        <text class="text_2 ml-73">{{currentDate}}</text>
       </view>
       <image
         class="image_5"
@@ -44,10 +44,6 @@
       <view class="ml-24 flex-col items-center equal-division-item">
         <text class="font text_6">Sun</text>
         <text class="font_2 text_10 mt-15">16</text>
-      </view>
-      <view class="ml-24 flex-col items-center equal-division-item">
-        <text class="font">Mon</text>
-        <text class="font_2 mt-15">17</text>
       </view>
     </view>
     <view class="flex-row justify-between group_4" style="position: relative; left: 0rpx; top: -174rpx">

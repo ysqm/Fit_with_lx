@@ -13,6 +13,16 @@ Page({
     wx.navigateTo({
       url: '/pages/Cycling/Cycling',
     })
+  },
+  go2gym(){
+    wx.navigateTo({
+      url: '/pages/Gym/Gym',
+    })
+  },
+  go2advice(){
+    wx.navigateTo({
+      url: '/pages/Advice/Advice',
+    })
   }
   
 });

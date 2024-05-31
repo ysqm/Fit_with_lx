@@ -16,7 +16,7 @@
       <view class="interaction">
         <!-- 点赞按钮 -->
         <button class="like-button" data-postid="{{item.id}}" bindtap="likePost">
-          <image class="like-icon" src="{{item.liked ? '/image/liked.png' : '/image/like.jpg'}}"></image>
+          <image class="like-icon" src="{{item.liked ? '/image/like.jpg' : '/image/like.jpg'}}"></image>
           <text>{{item.likes}}</text>
         </button>
         <!-- 评论按钮 -->

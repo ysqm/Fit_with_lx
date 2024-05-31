@@ -2,6 +2,8 @@ Page({
   data: {
     totalCalories: 0, // 初始化为0，等待从本地缓存中获取
     bmi: 0,
+    currentDate: '2022-01-01',
+    weekdays: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
   },
 
   onShareAppMessage() {
@@ -37,6 +39,18 @@ Page({
         bmi: PhysicsData.score || 0
       })
     }
-
+  },
+  onLoad: function () {
+    this.getCurrentDate();
+  },
+  getCurrentDate: function () {
+    const date = new Date();
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1; // 月份是从 0 开始的，所以要加 1
+    const day = date.getDate();
+    const currentDate = `${year}-${month}-${day}`;
+    this.setData({
+      currentDate: currentDate
+    });
   }
 });

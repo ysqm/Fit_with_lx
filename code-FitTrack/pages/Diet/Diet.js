@@ -1,13 +1,8 @@
 // pages/diet/Diet.js
 import * as echarts from '../../ec-canvas/echarts';
 const foods = require('../../utils/foods.js');
-//获取页面栈
-var pages = getCurrentPages();
-Page({
 
-  /**
-   * 页面的初始数据
-   */
+Page({
   data: {
     breakfast: [],
     lunch: [],
@@ -20,51 +15,16 @@ Page({
     }
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad(options) {
-    // 从本地存储中获取食物记录
-    const storageData = wx.getStorageSync('dietData');
-    if (storageData) {
-      this.setData({
-        breakfast: storageData.breakfast || [],
-        lunch: storageData.lunch || [],
-        dinner: storageData.dinner || [],
-        totalCalories: storageData.totalCalories || 0,
-      });  
-
-    }
-    // 初始化饼图
+    this.getDietRecordsByDate();
     this.initChart();
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
   onShow() {
-        
+    this.getDietRecordsByDate();
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
   onUnload() {
-    // 页面卸载时将食物记录存储到本地存储
     wx.setStorageSync('dietData', {
       breakfast: this.data.breakfast,
       lunch: this.data.lunch,
@@ -73,25 +33,198 @@ Page({
     });
   },
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
+  getDietRecordsByDate() {
+    const date = this.getCurrentDate();
+    wx.request({
+      url: 'http://localhost:8080/api/diet/records',
+      method: 'GET',
+      data: { date: date },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      success: res => {
+        if (res.statusCode === 200) {
+          this.setData({
+            breakfast: res.data.filter(record => record.meal === 'breakfast'),
+            lunch: res.data.filter(record => record.meal === 'lunch'),
+            dinner: res.data.filter(record => record.meal === 'dinner'),
+            totalCalories: this.calculateTotalCalories(res.data)
+          });
+        } else {
+          wx.showToast({ title: '获取饮食记录失败', icon: 'none' });
+        }
+      },
+      fail: () => {
+        wx.showToast({ title: '网络请求失败', icon: 'none' });
+      }
+    });
   },
 
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
+  addDietRecord(record) {
+    record.totalCalories = this.data.totalCalories; // 确保 totalCalories 和全局一致
+    wx.request({
+      url: 'http://localhost:8080/api/diet/records',
+      method: 'POST',
+      data: {
+        date: record.date,
+        meal: record.meal,
+        foodname: record.foodname,
+        foodquantity: record.foodquantity,
+        calorieIntake: record.calorieIntake,
+        totalCalories: record.totalCalories
+      },
+      header: {
+        'content-type': 'application/json'
+      },
+      success: res => {
+        if (res.statusCode === 201 || res.statusCode === 200) {
+          this.getDietRecordsByDate();
+        } else {
+          wx.showToast({ title: '添加失败', icon: 'none' });
+        }
+      },
+      fail: () => {
+        wx.showToast({ title: '网络请求失败', icon: 'none' });
+      }
+    });
   },
 
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
+  updateDietRecord(id, record) {
+    record.totalCalories = this.data.totalCalories; // 确保 totalCalories 和全局一致
+    wx.request({
+      url: `http://localhost:8080/api/diet/records/${id}`,
+      method: 'PUT',
+      data: record,
+      header: {
+        'content-type': 'application/json'
+      },
+      success: res => {
+        if (res.statusCode === 200) {
+          this.getDietRecordsByDate();
+        } else {
+          wx.showToast({ title: '修改失败', icon: 'none' });
+        }
+      },
+      fail: () => {
+        wx.showToast({ title: '网络请求失败', icon: 'none' });
+      }
+    });
+  },
 
+  deleteDietRecord(id) {
+    wx.request({
+      url: `http://localhost:8080/api/diet/records/${id}`,
+      method: 'DELETE',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      success: res => {
+        if (res.statusCode === 200 || res.statusCode === 204) {
+          this.getDietRecordsByDate();
+        } else {
+          wx.showToast({ title: '删除失败', icon: 'none' });
+        }
+      },
+      fail: () => {
+        wx.showToast({ title: '网络请求失败', icon: 'none' });
+      }
+    });
+  },
+
+  inputFood(event) {
+    const meal = event.currentTarget.dataset.meal;
+    const index = event.currentTarget.dataset.index;
+    const field = event.currentTarget.dataset.field;
+    const value = event.detail.value;
+
+    // 更新record中对应属性的值
+    const record = this.data[meal][index];
+    record[field] = value;
+
+    // 计算并更新calorieIntake属性
+    record.calorieIntake = this.calculateCalorieIntake(record.foodname, record.foodquantity);
+
+    // 更新相应的数据
+    this.setData({
+      [`${meal}[${index}].${field}`]: value,
+      [`${meal}[${index}].calorieIntake`]: record.calorieIntake, // 更新calorieIntake属性
+    });
+
+    // 每次输入都重新计算总热量
+    this.calculateTotalCalories();
+  },
+
+  blurFood(event) {
+    const meal = event.currentTarget.dataset.meal;
+    const index = event.currentTarget.dataset.index;
+    const record = this.data[meal][index];
+
+    if (!record.id) {
+      this.addDietRecord(record);
+    } else {
+      this.updateDietRecord(record.id, record);
+    }
+  },
+
+  addFood(event) {
+    const meal = event.currentTarget.dataset.meal;
+    const newFood = {
+      date: this.getCurrentDate(),
+      meal: meal,
+      foodname: '',
+      foodquantity: 0,
+      calorieIntake: 0,
+      totalCalories: this.data.totalCalories // 初始化时与全局一致
+    };
+    this.setData({
+      [meal]: [...this.data[meal], newFood],
+    });
+  },
+
+  deleteFood(event) {
+    const meal = event.currentTarget.dataset.meal;
+    const index = event.currentTarget.dataset.index;
+    const foods = this.data[meal];
+    const foodId = foods[index].id;
+
+    if (foodId) {
+      this.deleteDietRecord(foodId);
+    }
+
+    foods.splice(index, 1);
+    this.setData({
+      [meal]: foods,
+    });
+    this.calculateTotalCalories();
+  },
+
+  calculateTotalCalories() {
+    let total = 0;
+    ['breakfast', 'lunch', 'dinner'].forEach(meal => {
+      this.data[meal].forEach(record => {
+        total += this.calculateCalorieIntake(record.foodname, record.foodquantity);
+      });
+    });
+    this.setData({
+      totalCalories: total
+    });
+  },
+
+  calculateCalorieIntake(foodname, foodquantity) {
+    const food = foods.find(item => item.name === foodname);
+    if (food) {
+      return food.calories * foodquantity;
+    } else {
+      return 0;
+    }
+  },
+
+  getCurrentDate() {
+    const date = new Date();
+    const year = date.getFullYear();
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const day = date.getDate().toString().padStart(2, '0');
+    return `${year}-${month}-${day}`;
   },
 
   initChart() {
@@ -156,76 +289,19 @@ Page({
   getTotalCalories(meal) {
     let total = 0;
     meal.forEach(item => {
-      const food = foods.find(food => food.name === item.name);
+      const food = foods.find(food => food.name === item.foodname);
       if (food) {
-        total += food.calories * parseInt(item.quantity);
+        total += food.calories * parseInt(item.foodquantity);
       }
     });
     return total;
   },
-  
-  // 输入食物名称和数量
-  inputFood(event) {
-    const meal = event.currentTarget.dataset.meal;
-    const index = event.currentTarget.dataset.index;
-    const field = event.currentTarget.dataset.field;
-    const value = event.detail.value;
-    this.setData({
-      [`${meal}[${index}].${field}`]: value,
-    });
-    // 计算总热量
-    this.calculateTotalCalories();
-  },
 
-  // 添加食物
-  addFood(event) {
-    const meal = event.currentTarget.dataset.meal;
-    const newFood = { name: '', quantity: '' };
-    this.setData({
-      [meal]: [...this.data[meal], newFood],
-    });
-  },
-
-  // 删除食物
-  deleteFood(event) {
-    const meal = event.currentTarget.dataset.meal;
-    const index = event.currentTarget.dataset.index;
-    const foods = this.data[meal];
-    foods.splice(index, 1);
-    this.setData({
-      [meal]: foods,
-    });
-    // 计算总热量
-    this.calculateTotalCalories();
-  },
-
-  // 计算总热量
-  calculateTotalCalories() {
-    let total = 0;
-    const meals = ['breakfast', 'lunch', 'dinner'];
-
-    meals.forEach(meal => {
-      this.data[meal].forEach(item => {
-        const food = foods.find(food => food.name === item.name);
-        if (food) {
-          total += (food.calories * item.quantity);
-        }
-      });
-    });
-
-    this.setData({
-      totalCalories: total
-    });
-    
-  },
-
-  // 触摸开始
   touchStart(event) {
     this.data.startX = event.changedTouches[0].clientX;
     this.data.startY = event.changedTouches[0].clientY;
   },
 
-  // 触摸移动
   touchMove(event) {
     const meal = event.currentTarget.dataset.meal;
     const index = event.currentTarget.dataset.index;
@@ -234,14 +310,12 @@ Page({
     const disX = this.data.startX - moveX;
     const disY = this.data.startY - moveY;
     if (Math.abs(disX) > Math.abs(disY) && disX < -10) {
-      // 右滑删除
       const foods = this.data[meal];
       foods.splice(index, 1);
       this.setData({
         [meal]: foods,
       });
-      // 计算总热量
       this.calculateTotalCalories();
     }
   },
-})
+});

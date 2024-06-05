@@ -2,6 +2,8 @@ Page({
   data: {
     totalCalories: 0, // 初始化为0，等待从本地缓存中获取
     bmi: 0,
+    step: 6666,
+    cycle: 3.2,
     currentDate: '2022-01-01',
     weekdays: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
   },
@@ -22,6 +24,16 @@ Page({
   go2Physics(){
     wx.navigateTo({
       url: '/pages/Physics/Physics',
+    })
+  },
+  go2cycle(){
+    wx.navigateTo({
+      url: '/pages/Cycling/Cycling',
+    })
+  },
+  go2run(){
+    wx.navigateTo({
+      url: '/pages/Run/Run',
     })
   },
 

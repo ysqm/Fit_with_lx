@@ -101,7 +101,7 @@
 }
 .section_2 {
   border-radius: 40rpx;
-  background-image: url('https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=0ab2d5391ae6e00d96d2f44e43615a8d.png');
+  
   background-size: 100% 100%;
   background-repeat: no-repeat;
   width: 484rpx;
@@ -110,7 +110,7 @@
 .section_3 {
   padding: 250rpx 34rpx 32rpx;
   border-radius: 40rpx;
-  background-image: url('https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=77c3993ccad04bfa02273d700b3651c0.png');
+  
   background-size: 100% 100%;
   background-repeat: no-repeat;
   width: 484rpx;
@@ -162,7 +162,7 @@
 }
 .section_4 {
   border-radius: 40rpx;
-  background-image: url('https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=05819589b80d5b4ff6033235d4ff4a74.png');
+  
   background-size: 100% 100%;
   background-repeat: no-repeat;
   width: 484rpx;

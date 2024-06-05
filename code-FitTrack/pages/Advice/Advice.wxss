@@ -27,7 +27,7 @@
   border: none;
   border-radius: 10rpx;
   padding: 15rpx;
-  font-size: 18rpx;
+  font-size: 24rpx;
 }
 
 .suggestions-section {

@@ -182,14 +182,14 @@
 .section_2 {
   padding: 36rpx 0;
   opacity: 0.2;
-  background-image: url('https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=eebbbba8f47de90c7b5ce505f9b37d39.png');
+  
   background-size: 100% 100%;
   background-repeat: no-repeat;
   width: 328rpx;
 }
 .image-wrapper {
   padding: 40rpx 0;
-  background-image: url('https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=f507bd9a86baf9f48e94b85b60175e53.png');
+  
   background-size: 100% 100%;
   background-repeat: no-repeat;
   width: 254rpx;
@@ -201,7 +201,7 @@
 }
 .section_3 {
   padding: 36rpx 0;
-  background-image: url('https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=5cc6ce6424b18bddc15b7a140e669d71.png');
+  
   background-size: 100% 100%;
   background-repeat: no-repeat;
   width: 320rpx;
@@ -227,7 +227,7 @@
 .section_5 {
   margin-right: 36rpx;
   padding: 4rpx 0 228rpx;
-  background-image: url('https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=3caa8e521298eb24d6d6fb4bb9848104.png');
+  
   background-size: 100% 100%;
   background-repeat: no-repeat;
   width: 172rpx;
@@ -241,7 +241,7 @@
 }
 .section_7 {
   padding: 4rpx 0 152rpx;
-  background-image: url('https://ide.code.fun/api/image?token=663c983ad578370011c6ba35&name=c356e4c9d1fb898aa7e3151841999143.png');
+  
   background-size: 100% 100%;
   background-repeat: no-repeat;
   width: 174rpx;

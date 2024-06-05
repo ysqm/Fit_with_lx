@@ -8,6 +8,13 @@
     "miniprogram": {
       "list": [
         {
+          "name": "pages/Advice/Advice",
+          "pathName": "pages/Advice/Advice",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "pages/Post/Post",
           "pathName": "pages/Post/Post",
           "query": "",

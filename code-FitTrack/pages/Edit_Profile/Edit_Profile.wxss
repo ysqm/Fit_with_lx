@@ -1,6 +1,6 @@
 .container{
   height: 1206rpx;
-  background-color: rgba(113, 238, 169, 0.5);
+  background-color: #f0f8ff;
   border-radius: 60rpx;
 }
 

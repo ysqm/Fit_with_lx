@@ -3,27 +3,32 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.sky.entity.mapper.DietRecordMapper">
+<mapper namespace="com.sky.mapper.DietRecordMapper">
 
-    <resultMap id="DietRecordMap" type="com.sky.entity.DietRecord">
-        <id column="id" property="id" />
-        <result column="date" property="date" />
-        <result column="meal" property="meal" />
-        <result column="foodname" property="foodname" />
-        <result column="foodquantity" property="foodquantity" />
-        <result column="calorie_intake" property="calorieIntake" />
-    </resultMap>
+    <select id="findByDate" resultType="com.sky.entity.DietRecord">
+        SELECT * FROM diet_records WHERE date = #{date}
+    </select>
 
-    <insert id="insertDietRecords" parameterType="list">
-        INSERT INTO diet_records (date, meal, foodname, foodquantity, calorie_intake)
-        VALUES
-        <foreach collection="list" item="record" separator=",">
-            (#{record.date}, #{record.meal}, #{record.foodname}, #{record.foodquantity}, #{record.calorieIntake})
-        </foreach>
+    <insert id="insertDietRecord" parameterType="com.sky.entity.DietRecord">
+        INSERT INTO diet_records (date, meal, foodname, foodquantity, calorieIntake, totalCalories)
+        VALUES (#{date}, #{meal}, #{foodname}, #{foodquantity}, #{calorieIntake}, #{totalCalories})
     </insert>
 
-    <select id="getAllDietRecords" resultMap="DietRecordMap">
-        SELECT * FROM diet_record
-    </select>
+
+    <update id="updateDietRecord" parameterType="com.sky.entity.DietRecord">
+        UPDATE diet_records
+        SET date = #{date},
+            meal = #{meal},
+            foodname = #{foodname},
+            foodquantity = #{foodquantity},
+            calorieIntake = #{calorieIntake},
+            totalCalories = #{totalCalories}
+        WHERE id = #{id}
+    </update>
+
+    <delete id="deleteDietRecord" parameterType="Long">
+        DELETE FROM diet_records WHERE id = #{id}
+    </delete>
+
 
 </mapper>

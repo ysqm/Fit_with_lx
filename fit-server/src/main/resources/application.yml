@@ -20,6 +20,10 @@ mybatis:
   configuration:
     #开启驼峰命名
     map-underscore-to-camel-case: true
+    default-statement-timeout: 30
+    default-fetch-size: 100
+    use-generated-keys: true
+    database-id: mysql
 
 logging:
   level:

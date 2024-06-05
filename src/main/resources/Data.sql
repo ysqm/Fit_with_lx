@@ -9,7 +9,10 @@ CREATE TABLE users (
                        avatar VARCHAR(100),
                        username VARCHAR(50) NOT NULL,
                        wechat_id VARCHAR(50),
-                       registration_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+                       registration_time DATETIME DEFAULT CURRENT_TIMESTAMP,
+                       update_time DATETIME DEFAULT CURRENT_TIMESTAMP,
+                       last_login_time DATETIME DEFAULT CURRENT_TIMESTAMP,
+                       is_logged_out BOOLEAN DEFAULT FALSE -- 新增的注销状态属性
 );
 
 

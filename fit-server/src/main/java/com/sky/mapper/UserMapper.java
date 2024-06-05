@@ -5,10 +5,10 @@ import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface UserMapper {
-//    public User getUserById(int id);
+    User getUserById(Integer id);
 
     User getUserByAccount(String account);
 
-    int insertUser(User user);
-    int updateUser(User user);
+    Integer insertUser(User user);
+    Integer updateUser(User user);
 }

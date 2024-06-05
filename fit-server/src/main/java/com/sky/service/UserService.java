@@ -6,6 +6,8 @@ import com.sky.entity.User;
 import java.util.Map;
 
 public interface UserService {
+
+    Map<String, Object> getUserById(Integer id);
     /**
      * 用户注册
      *

@@ -15,6 +15,20 @@ CREATE TABLE users (
                        is_logged_out BOOLEAN DEFAULT FALSE -- 新增的注销状态属性
 );
 
+DROP TABLE IF EXISTS `messages`;
+CREATE TABLE messages (
+                    m_id INT AUTO_INCREMENT PRIMARY KEY,
+                    text VARCHAR(255) NOT NULL,
+                    date DATETIME NOT NULL,
+                    is_expired INT DEFAULT 0 CHECK (is_expired IN (0, 1)),
+                    type INT NOT NULL,
+                    location VARCHAR(255),
+                    fa_message INT,
+                    user_id INT NOT NULL,
+                    likes INT DEFAULT 0,
+                    latest_reply DATETIME DEFAULT NULL,
+                    FOREIGN KEY (user_id) REFERENCES users(id)
+);
 
 DROP TABLE IF EXISTS `data`;
 CREATE TABLE data (

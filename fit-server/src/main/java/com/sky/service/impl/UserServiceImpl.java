@@ -4,6 +4,7 @@ import com.sky.dto.UserLoginDTO;
 import com.sky.entity.User;
 import com.sky.mapper.UserMapper;
 import com.sky.service.UserService;
+import io.swagger.models.auth.In;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -17,6 +18,20 @@ public class UserServiceImpl implements UserService {
 
     public UserServiceImpl(UserMapper userMapper) {
         this.userMapper = userMapper;
+    }
+
+    public  Map<String,Object> getUserById(Integer id)
+    {
+        Map<String,Object> map = new HashMap<>();
+        User user = userMapper.getUserById(id);
+        if(user!=null){
+            map.put("data",user);
+            map.put("msg",0);
+        } else {
+            map.put("data",null);
+            map.put("msg",-1);
+        }
+        return map;
     }
 
     public Map<String,Object> RegisterUser(User User)

@@ -16,7 +16,7 @@
     </resultMap>
 
 <!--    <sql id="Base_Column_List">-->
-<!--        ${id}, ${account}, ${password}, ${avatar}, ${username}, ${wechat_id}, ${registration_time}, ${is_logged_out}, ${last_login_time}, ${update_time}-->
+<!--        id,account,password,avatar,username,wechat_id,registration_time,is_logged_out,last_login_time,update_time-->
 <!--    </sql>-->
 
     <select id="getUserById" parameterType="java.lang.Integer" resultMap="BaseResultMap">

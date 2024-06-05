@@ -32,4 +32,8 @@ public class UserController {
     @PostMapping("/update")
     @ApiOperation("用户信息修改")
     public Map<String, Object> update(User user) {return userService.UpdateUser(user);}
+
+    @PostMapping("/getUserById")
+    @ApiOperation("通过Id获取用户信息")
+    public Map<String, Object> getUserById(Integer id) {return userService.getUserById(id);}
 }

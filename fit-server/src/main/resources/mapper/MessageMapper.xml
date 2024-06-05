@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sky.mapper.MessageMapper">
+
+    <resultMap id="BaseResultMap" type="com.sky.entity.Message">
+        <id column="m_id" property="m_id" jdbcType="INTEGER" />
+        <result column="text" property="text" jdbcType="VARCHAR" />
+        <result column="date" property="date" jdbcType="DATE" />
+        <result column="latest_reply" property="latestReply" jdbcType="DATE" />
+        <result column="is_expired" property="isExpired" jdbcType="INTEGER" />
+        <result column="type" property="type" jdbcType="INTEGER" />
+        <result column="location" property="location" jdbcType="VARCHAR" />
+        <result column="fa_message" property="faMessage" jdbcType="INTEGER" />
+        <result column="user_id" property="userId" jdbcType="INTEGER" />
+        <result column="likes" property="likes" jdbcType="INTEGER" />
+        <association property="user" column="user_id" javaType="com.sky.entity.User" fetchType="eager">
+            <id column="id" property="id" jdbcType="INTEGER" />
+            <result column="account" property="account" jdbcType="VARCHAR" />
+            <result column="password" property="password" jdbcType="VARCHAR" />
+            <result column="avatar" property="avatar" jdbcType="VARCHAR" />
+            <result column="username" property="username" jdbcType="VARCHAR" />
+            <result column="wechat_id" property="wechatId" jdbcType="VARCHAR" />
+            <result column="registration_time" property="registrationTime" jdbcType="TIMESTAMP" />
+            <result column="is_logged_out" property="isLoggedOut" jdbcType="BOOLEAN" />
+            <result column="last_login_time" property="lastLoginTime" jdbcType="TIMESTAMP" />
+            <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+        </association>
+    </resultMap>
+
+<!--    <sql id="Base_Column_List">-->
+<!--        m.m_id, m.text, m.date, m.is_expired, m.type, m.location, m.fa_message, m.user_id, m.likes,-->
+<!--        u.id, u.account, u.password, u.avatar, u.username, u.wechat_id, u.registration_time, u.is_logged_out, u.last_login_time, u.update_time-->
+<!--    </sql>-->
+
+    <insert id="insertMessage" parameterType="com.sky.entity.Message">
+        INSERT INTO messages (
+            text, date, is_expired, type, location, fa_message, user_id, likes, latest_reply
+        ) VALUES (
+                     #{text}, #{date}, #{isExpired}, #{type}, #{location}, #{faMessage}, #{userId}, #{likes}, #{latestReply}
+                 )
+    </insert>
+
+    <select id="getMessagesByTypeAndRange" resultMap="BaseResultMap">
+        SELECT
+            *
+        FROM
+            messages
+        WHERE
+            is_expired = 0
+          AND type = #{type}
+        ORDER BY
+            latest_reply DESC
+        LIMIT
+            #{start}, #{end}
+    </select>
+
+    <select id="getMessagesByUserIdAndType" resultMap="BaseResultMap">
+        SELECT
+            *
+        FROM
+            messages
+        WHERE
+            user_id = #{userId}
+          AND type = #{type}
+        ORDER BY
+            latest_reply DESC
+    </select>
+
+    <select id="getUserById" resultMap="UserResultMap">
+        SELECT
+            *
+        FROM
+            users
+        WHERE
+            id = #{userId}
+    </select>
+
+    <select id="getRepliesByMessageIdAndRange" resultMap="BaseResultMap">
+        WITH RECURSIVE replies AS (
+            SELECT
+                m.*
+            FROM
+                messages m
+            WHERE
+                m.m_id = #{messageId}
+            UNION ALL
+            SELECT
+                m.*
+            FROM
+                messages m
+                    INNER JOIN replies r ON m.fa_message = r.m_id
+        )
+        SELECT
+            *
+        FROM
+            replies
+        ORDER BY
+            latest_reply ASC
+        LIMIT #{start}, #{end}
+    </select>
+
+    <update id="updateMessage" parameterType="com.sky.entity.Message">
+        UPDATE messages
+        SET
+            latest_reply = #{latestReply},
+            is_expired = #{isExpired},
+            likes = #{likes}
+        WHERE m_id = #{m_id}
+    </update>
+
+    <delete id="clearMessage" >
+        delete from messages WHERE is_expired = 1
+    </delete>
+
+</mapper>

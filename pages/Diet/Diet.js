@@ -18,13 +18,16 @@ Page({
 
   onLoad(options) {
     this.getDietRecordsByDate();
-    this.initChart();
-    this.initChart2();
     this.calculateTotalCalories();
   },
 
   onShow() {
     this.getDietRecordsByDate();
+  },
+  
+  onReady(){
+    this.initChart();
+    this.initChart2();
   },
 
   onUnload() {

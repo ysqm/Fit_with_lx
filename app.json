@@ -10,7 +10,10 @@
     "pages/Edit_Profile/Edit_Profile",
     "pages/Freinds/Freinds",
     "pages/Diet/Diet",
-    "pages/Physics/Physics"
+    "pages/Physics/Physics",
+    "pages/Gyms/Gyms",
+    "pages/Cycling/Cycling",
+    "pages/Run/Run"
   ],
   "window": {
     "backgroundTextStyle": "light",

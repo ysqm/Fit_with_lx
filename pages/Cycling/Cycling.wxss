@@ -1,0 +1,64 @@
+/* cycling.wxss */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+.info {
+  margin-top: 20px;
+  text-align: center;
+  width: 100%;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.info-item {
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.info-label {
+  font-size: 16px;
+  color: #666;
+}
+
+.info-value {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.controls {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.control-button {
+  width: 100px;
+  height: 40px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  text-align: center;
+  line-height: 40px;
+}
+
+.control-button:active {
+  background-color: #0056b3;
+}
+
+.map {
+  border-radius: 10px;
+  overflow: hidden;
+}

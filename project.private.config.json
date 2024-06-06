@@ -8,6 +8,34 @@
     "miniprogram": {
       "list": [
         {
+          "name": "pages/Diet/Diet",
+          "pathName": "pages/Diet/Diet",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/Cycling/Cycling",
+          "pathName": "pages/Cycling/Cycling",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/Run/Run",
+          "pathName": "pages/Run/Run",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/Gyms/Gyms",
+          "pathName": "pages/Gyms/Gyms",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "pages/Physics/Physics",
           "pathName": "pages/Physics/Physics",
           "query": "",

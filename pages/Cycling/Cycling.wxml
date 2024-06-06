@@ -1,0 +1,33 @@
+<!-- cycling.wxml -->
+<view class="container">
+  <map 
+    id="map" 
+    longitude="{{longitude}}" 
+    latitude="{{latitude}}" 
+    polyline="{{polyline}}" 
+    show-location 
+    style="width: 100%; height: 300px;">
+  </map>
+
+  <view class="info">
+    <view class="info-item">
+      <text class="info-label">时间:</text>
+      <text class="info-value">{{time}}</text>
+    </view>
+    <view class="info-item">
+      <text class="info-label">距离:</text>
+      <text class="info-value">{{distance}} 公里</text>
+    </view>
+    <view class="info-item">
+      <text class="info-label">热量:</text>
+      <text class="info-value">{{calories}} 千卡</text>
+    </view>
+  </view>
+
+  <view class="controls">
+    <button class="control-button" bindtap="startCycling" wx:if="{{!isCycling}}">开始</button>
+    <button class="control-button" bindtap="pauseCycling" wx:if="{{isCycling && !isPaused}}">暂停</button>
+    <button class="control-button" bindtap="resumeCycling" wx:if="{{isPaused}}">继续</button>
+    <button class="control-button" bindtap="stopCycling" wx:if="{{isCycling}}">结束</button>
+  </view>
+</view>

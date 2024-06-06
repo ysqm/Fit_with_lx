@@ -43,15 +43,32 @@
 
     <update id="updateUser" parameterType="com.sky.entity.User">
         UPDATE users
-        SET
-            account = #{account},
-            password = #{password},
-            avatar = #{avatar},
-            username = #{username},
-            wechat_id = #{wechatId},
-            is_logged_out = #{isLoggedOut},
-            last_login_time = #{lastLoginTime},
-            update_time = #{updateTime}
+        <set>
+            <if test="account != null">
+                account = #{account},
+            </if>
+            <if test="password != null">
+                password = #{password},
+            </if>
+            <if test="avatar != null">
+                avatar = #{avatar},
+            </if>
+            <if test="username != null">
+                username = #{username},
+            </if>
+            <if test="wechatId != null">
+                wechat_id = #{wechatId},
+            </if>
+            <if test="isLoggedOut != null">
+                is_logged_out = #{isLoggedOut},
+            </if>
+            <if test="lastLoginTime != null">
+                last_login_time = #{lastLoginTime},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime},
+            </if>
+        </set>
         WHERE id = #{id}
     </update>
 

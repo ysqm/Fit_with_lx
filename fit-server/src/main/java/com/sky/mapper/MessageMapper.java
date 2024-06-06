@@ -16,4 +16,5 @@ public interface MessageMapper {
     User getUserById(@Param("userId") Integer userId);
     Integer insertMessage(@Param("message") Message message);
     Integer updateMessage(@Param("message") Message message);
+    Message getMessageById(@Param("MId") Integer messageId);
 }

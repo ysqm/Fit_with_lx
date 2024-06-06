@@ -99,6 +99,10 @@
         LIMIT #{start}, #{end}
     </select>
 
+    <select id="getMessageByMId" parameterType="java.lang.Integer">
+        SELECT * FROM  messages WHERE m_id = #{m_id}
+    </select>
+
     <update id="updateMessage" parameterType="com.sky.entity.Message">
         UPDATE messages
         SET

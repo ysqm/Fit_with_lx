@@ -8,4 +8,7 @@ import java.util.Map;
 
 public interface MessageService {
     Map<String,Object> getMessages(GetMessageDTO getMessageDTO);
+    Map<String,Object> createMessage(Message message);
+    Map<String,Object> updateMessage(Message message);
+    Map<String,Object> getUserById(Integer id);
 }

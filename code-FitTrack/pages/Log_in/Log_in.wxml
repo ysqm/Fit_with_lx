@@ -1,21 +1,38 @@
 <view class="flex-col page">
-  <view class="flex-col flex-1 group" style="width: 750rpx; height: auto; display: flex; box-sizing: border-box">
-    <view class="flex-col justify-start items-center self-center image-wrapper" >
-      <image
-        class="image_4"
-        src="/image/login.png"
-      />
+  <view class="flex-col flex-1 group">
+    <view class="flex-col justify-start items-center self-center image-wrapper">
+      <image class="image_4" src="/image/login.png"/>
     </view>
-    <text class="self-center text_2">运动不息
-    生命不止</text>
+    <text class="self-center text_2">运动不息 生命不止</text>
     <view class="flex-col self-stretch group_2">
-      <view >
-        <button type="primary" bind:tap="login" style="position: relative; left: 0rpx; top: -275rpx">注册</button>
+      <button type="primary" bindtap="showRegisterPopup" class="button_register">注册</button>
+      <button bindtap="showLoginPopup" class="button_login">登录</button>
+    </view>
+  </view>
+
+  <!-- 注册弹窗 -->
+  <view wx:if="{{showRegister}}" class="popup">
+    <view class="popup-content">
+      <text class="popup-title">注册</text>
+      <input class="popup-input" placeholder="用户名" bindinput="onInput" data-field="registerUsername"/>
+      <input class="popup-input" placeholder="密码" password="true" bindinput="onInput" data-field="registerPassword"/>
+      <view class="popup-buttons">
+        <button type="primary" bindtap="register">提交</button>
+        <button bindtap="closePopup">关闭</button>
       </view>
-      <view >
-        <button bind:tap="go2Category" style="position: relative; left: 0rpx; top: -225rpx" >登录</button>
+    </view>
+  </view>
+
+  <!-- 登录弹窗 -->
+  <view wx:if="{{showLogin}}" class="popup">
+    <view class="popup-content">
+      <text class="popup-title">登录</text>
+      <input class="popup-input" placeholder="用户名" bindinput="onInput" data-field="loginUsername"/>
+      <input class="popup-input" placeholder="密码" password="true" bindinput="onInput" data-field="loginPassword"/>
+      <view class="popup-buttons">
+        <button type="primary" bindtap="login">提交</button>
+        <button bindtap="closePopup">关闭</button>
       </view>
-      
     </view>
   </view>
 </view>

@@ -4,7 +4,8 @@ import com.sky.dto.GetMessageDTO;
 import com.sky.entity.Message;
 
 import java.util.List;
+import java.util.Map;
 
 public interface MessageService {
-    List<Message> getMessages(GetMessageDTO getMessageDTO);
+    Map<String,Object> getMessages(GetMessageDTO getMessageDTO);
 }

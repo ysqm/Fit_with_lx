@@ -130,7 +130,7 @@
             src="https://cn.bing.com/images/search?view=detailV2&ccid=RRuQceTh&id=02285C2A40CCCFE1A6F0D2A6F8DACB59732D6C60&thid=OIP.RRuQceThQQAWHJh8aU6VLQAAAA&mediaurl=https%3a%2f%2fts1.cn.mm.bing.net%2fth%2fid%2fR-C.451b9071e4e14100161c987c694e952d%3frik%3dYGwtc1nL2vim0g%26riu%3dhttp%253a%252f%252fpic.616pic.com%252fys_img%252f00%252f88%252f42%252frBLAQn0w5m.jpg%26ehk%3dt8oOHIEWo4amVLnnHmLypk7uWFCzCbiB1GtZBoSxkHQ%253d%26risl%3d%26pid%3dImgRaw%26r%3d0%26sres%3d1%26sresct%3d1%26srh%3d800%26srw%3d800&exph=260&expw=260&q=%e5%b0%8f%e7%81%ab%e8%8b%97%e5%b0%8f%e5%9b%be%e6%a0%87&simid=608003735928337379&FORM=IRPRST&ck=DF02F1ECDB5F6A58950A0DEA3AF19C56&selectedIndex=1&itb=0"
           />
           <view class="flex-row items-baseline ml-31">
-            <text class="font_4">{{total_calories}}</text>
+            <text class="font_4">{{totalCalories}}</text>
             <text class="font_2 text_15 ml-5">kcal</text>
           </view>
         </view>

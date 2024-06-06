@@ -54,6 +54,7 @@
   <view class="total">
     <text>总热量：</text>
     <text>{{ totalCalories }}</text>
+    <text> kcal</text>
   </view>
 
 

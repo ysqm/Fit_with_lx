@@ -87,7 +87,7 @@ Page({
           radius: '55%',
           data: data,
           label: {
-            formatter: '{b}: {d}%'
+            formatter: '{b}:\n {d}%'
           }
         }]
       };

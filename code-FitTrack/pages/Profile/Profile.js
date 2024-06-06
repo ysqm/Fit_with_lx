@@ -33,12 +33,50 @@ Page({
   },
 
   onLoad(options) {
-    // 可以在此获取用户信息
-    this.setData({
-      userInfo: {
-        avatar: '/image/avatar.jpg',
-        name: '用户名'
-      }
-    });
+    // 获取用户 ID
+    var user_id = wx.getStorageSync('id');
+
+    // 确保 user_id 存在
+    if (user_id) {
+      // 发送请求获取用户信息
+      wx.request({
+        url: 'http://localhost:8080/user/getUserById',
+        method: 'POST',
+        data: {
+          id: user_id
+        },
+        header: {
+          'content-type': 'application/x-www-form-urlencoded'
+        },
+        success: (res) => {
+          console.log("Response:", res); // 打印服务器响应以进行调试
+          if (res.data.msg === 0) {
+            this.setData({
+              userInfo: {
+                avatar: res.data.data.avatar,
+                name: res.data.data.username
+              }
+            });
+          } else {
+            wx.showToast({
+              title: '获取用户信息失败',
+              icon: 'none'
+            });
+          }
+        },
+        fail: (err) => {
+          console.error("Request failed:", err); // 打印错误以进行调试
+          wx.showToast({
+            title: '请求失败',
+            icon: 'none'
+          });
+        }
+      });
+    } else {
+      wx.showToast({
+        title: '用户未登录',
+        icon: 'none'
+      });
+    }
   }
 });

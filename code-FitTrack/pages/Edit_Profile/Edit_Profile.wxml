@@ -1,46 +1,45 @@
 <view class="container" >
-<!-- 头像 -->
-<view>
-  <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar"  >
-  <image src="{{avatarUrl}}" class="avatar" />
-  </button> 
+  <!-- 头像 -->
+  <view>
+    <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+      <image src="{{avatarUrl}}" class="avatar" />
+    </button> 
+  </view>
+
+  <!-- 基本信息 -->
+  <view class="form">
+    <!-- 输入框 -->
+    <view class="inputs">
+      <!-- 姓名 -->
+      <view class="item">
+        <view class="title">姓名</view>
+        <input type="text" placeholder="请输入姓名" data-field="name" bindinput="onInput" placeholder-style="placeholder-style"/>
+      </view>
+      <!-- 电话 -->
+      <view class="item">
+        <view class="title">电话</view>
+        <input type="text" placeholder="请输入电话" data-field="phone" bindinput="onInput" placeholder-style="placeholder-style"/>
+      </view>
+      <!-- 地址 -->
+      <view class="item">
+        <view class="title">地址</view>
+        <input type="text" placeholder="请输入地址" data-field="address" bindinput="onInput" placeholder-style="placeholder-style"/>
+      </view>
+      <!-- 生日 -->
+      <view class="item">
+        <view class="title">生日</view>
+        <input type="text" placeholder="请输入生日" data-field="birthday" bindinput="onInput" placeholder-style="placeholder-style"/>
+      </view>
+      <!-- 爱好 -->
+      <view class="item">
+        <view class="title">爱好</view>
+        <input type="text" placeholder="请输入爱好" data-field="hobby" bindinput="onInput" placeholder-style="placeholder-style"/>
+      </view>
+    </view>
+  </view>
+  <!-- 保存按钮 -->
+  <view class="btn" bindtap="saveAndLogin">
+    保存并登录
+  </view>
 </view>
 
-<!-- 基本信息 -->
-<view class="form">
-<!-- 输入框 -->
-<view class="inputs">
-  <!-- 姓名 -->
-  <view class="item">
-    <view class="title">姓名</view>
-    <input type="text" placeholder-style="placeholder-style"/>
-  </view>
-  <!-- 电话 -->
-  <view class="item">
-    <view class="title">电话</view>
-    <input type="text" placeholder-style="placeholder-style"/>
-  </view>
-  <!-- 地址 -->
-  <view class="item">
-    <view class="title">地址</view>
-    <input type="text" placeholder-style="placeholder-style"/>
-  </view>
-  <!-- 生日 -->
-  <view class="item">
-    <view class="title">生日</view>
-    <input type="text" placeholder-style="placeholder-style"/>
-  </view>
-  <!-- 爱好 -->
-  <view class="item">
-    <view class="title">爱好</view>
-    <input type="text" placeholder-style="placeholder-style"/>
-  </view>
-</view>
-
-</view>
-<!-- 保存按钮 -->
-<view class="btn">
-  保存并登录
-</view>
-<!--  -->
-</view>

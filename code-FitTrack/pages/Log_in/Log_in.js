@@ -47,7 +47,7 @@ Page({
 
     // 发送注册请求到服务器
     wx.request({
-      url: 'http://localhost:8080/user/regiser', // 修正后的注册接口
+      url: 'http://localhost:8080/user/register', // 修正后的注册接口
       method: 'POST',
       data: {
         username: registerUsername,
@@ -65,7 +65,6 @@ Page({
             icon: 'none'
           });
           this.closePopup();
-          this.go2Category_Page(); // 使用 this 调用
         } else {
           wx.showToast({
             title: '注册失败',
@@ -99,6 +98,8 @@ Page({
       },
       success: (res) => {
         // 处理成功响应
+        // console.log(res);
+        wx.setStorageSync('id',res.data.data.id);//将用户id放入缓存
         if (res.data.msg === 0) {
           wx.showToast({
             title: '登录成功',

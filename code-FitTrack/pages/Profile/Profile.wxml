@@ -1,9 +1,9 @@
 <view class="page">
   <!-- 用户信息 -->
   <view class="user-info">
-    <image class="avatar" src="" mode=""/>
+    <image class="avatar" src="{{userInfo.avatar}}" mode=""/>
     <view class="info">
-      <text class="name">用户名</text>
+      <text class="name">{{userInfo.name}}</text>
     </view>
     <button bind:tap="gotoEdit" class="edit">编辑</button>
   </view>

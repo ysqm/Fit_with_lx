@@ -18,6 +18,7 @@ Page({
   onLoad(options) {
     this.getDietRecordsByDate();
     this.initChart();
+    this.calculateTotalCalories();
   },
 
   onShow() {
@@ -36,20 +37,32 @@ Page({
   getDietRecordsByDate() {
     const date = this.getCurrentDate();
     wx.request({
-      url: 'http://localhost:8080/api/diet/records',
+      url: 'http://10.19.129.17:8080/api/diet/records',
       method: 'GET',
       data: { date: date },
       header: {
         'content-type': 'application/x-www-form-urlencoded'
       },
       success: res => {
-        if (res.statusCode === 200) {
-          this.setData({
-            breakfast: res.data.filter(record => record.meal === 'breakfast'),
-            lunch: res.data.filter(record => record.meal === 'lunch'),
-            dinner: res.data.filter(record => record.meal === 'dinner'),
-            totalCalories: this.calculateTotalCalories(res.data)
+        if (res.statusCode === 200 && Array.isArray(res.data)) {
+          const breakfast = res.data.filter(record => record.meal === 'breakfast').map(record => {
+            delete record.totalCalories;
+            return record;
           });
+          const lunch = res.data.filter(record => record.meal === 'lunch').map(record => {
+            delete record.totalCalories;
+            return record;
+          });
+          const dinner = res.data.filter(record => record.meal === 'dinner').map(record => {
+            delete record.totalCalories;
+            return record;
+          });
+          this.setData({
+            breakfast,
+            lunch,
+            dinner
+          });
+          this.calculateTotalCalories();
         } else {
           wx.showToast({ title: '获取饮食记录失败', icon: 'none' });
         }
@@ -59,11 +72,12 @@ Page({
       }
     });
   },
+  
 
   addDietRecord(record) {
     record.totalCalories = this.data.totalCalories; // 确保 totalCalories 和全局一致
     wx.request({
-      url: 'http://localhost:8080/api/diet/records',
+      url: 'http://10.19.129.17:8080/api/diet/records',
       method: 'POST',
       data: {
         date: record.date,
@@ -92,7 +106,7 @@ Page({
   updateDietRecord(id, record) {
     record.totalCalories = this.data.totalCalories; // 确保 totalCalories 和全局一致
     wx.request({
-      url: `http://localhost:8080/api/diet/records/${id}`,
+      url: `http://10.19.129.17:8080/api/diet/records/${id}`,
       method: 'PUT',
       data: record,
       header: {
@@ -113,7 +127,7 @@ Page({
 
   deleteDietRecord(id) {
     wx.request({
-      url: `http://localhost:8080/api/diet/records/${id}`,
+      url: `http://10.19.129.17:8080/api/diet/records/${id}`,
       method: 'DELETE',
       header: {
         'content-type': 'application/x-www-form-urlencoded'
@@ -238,7 +252,7 @@ Page({
       const breakfastCalories = this.getTotalCalories(this.data.breakfast);
       const lunchCalories = this.getTotalCalories(this.data.lunch);
       const dinnerCalories = this.getTotalCalories(this.data.dinner);
-      const totalCalories = this.data.totalCalories;
+      const totalCalories = breakfastCalories+lunchCalories+dinnerCalories;
 
       const option = {
         title: {
@@ -255,7 +269,7 @@ Page({
               name: '早餐',
               label: {
                 formatter: function (params) {
-                  return '早餐 ' + ((params.value / totalCalories) * 100).toFixed(2) + '%';
+                  return '早餐\n' + ((params.value / totalCalories) * 100).toFixed(2) + '%';
                 }
               }
             },
@@ -264,7 +278,7 @@ Page({
               name: '午餐',
               label: {
                 formatter: function (params) {
-                  return '午餐 ' + ((params.value / totalCalories) * 100).toFixed(2) + '%';
+                  return '午餐\n ' + ((params.value / totalCalories) * 100).toFixed(2) + '%';
                 }
               }
             },
@@ -273,7 +287,7 @@ Page({
               name: '晚餐',
               label: {
                 formatter: function (params) {
-                  return '晚餐 ' + ((params.value / totalCalories) * 100).toFixed(2) + '%';
+                  return '晚餐\n ' + ((params.value / totalCalories) * 100).toFixed(2) + '%';
                 }
               }
             }

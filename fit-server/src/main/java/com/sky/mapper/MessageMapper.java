@@ -11,10 +11,10 @@ import java.util.List;
 public interface MessageMapper {
 
     List<Message> getMessagesByTypeAndRange(@Param("type") Integer type, @Param("start") Integer start, @Param("end") Integer end);
-    List<Message> getRepliesByMessageIdAndRange(@Param("messageId") Integer messageId, @Param("start") Integer start, @Param("end") Integer end);
+    List<Message> getRepliesByMessageIdAndRange(@Param("m_Id") Integer messageId, @Param("start") Integer start, @Param("end") Integer end);
     List<Message> getMessagesByUserIdAndType(@Param("type") Integer type, @Param("userId") Integer userId);
     User getUserById(@Param("userId") Integer userId);
-    Integer insertMessage(@Param("message") Message message);
-    Integer updateMessage(@Param("message") Message message);
-    Message getMessageById(@Param("MId") Integer messageId);
+    Integer insertMessage(Message message);
+    Integer updateMessage(Message message);
+    Message getMessageById(@Param("m_id") Integer messageId);
 }

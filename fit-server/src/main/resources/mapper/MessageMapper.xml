@@ -27,6 +27,19 @@
         </association>
     </resultMap>
 
+    <resultMap id="UserResultMap" type="com.sky.entity.User">
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="account" property="account" jdbcType="VARCHAR" />
+        <result column="password" property="password" jdbcType="VARCHAR" />
+        <result column="avatar" property="avatar" jdbcType="VARCHAR" />
+        <result column="username" property="username" jdbcType="VARCHAR" />
+        <result column="wechat_id" property="wechatId" jdbcType="VARCHAR" />
+        <result column="registration_time" property="registrationTime" jdbcType="DATE" />
+        <result column="update_time" property="updateTime" jdbcType="DATE" />
+        <result column="last_login_time" property="lastLoginTime" jdbcType="DATE" />
+        <result column="is_logged_out" property="isLoggedOut" jdbcType="BOOLEAN" />
+    </resultMap>
+
 <!--    <sql id="Base_Column_List">-->
 <!--        m.m_id, m.text, m.date, m.is_expired, m.type, m.location, m.fa_message, m.user_id, m.likes,-->
 <!--        u.id, u.account, u.password, u.avatar, u.username, u.wechat_id, u.registration_time, u.is_logged_out, u.last_login_time, u.update_time-->
@@ -106,9 +119,15 @@
     <update id="updateMessage" parameterType="com.sky.entity.Message">
         UPDATE messages
         SET
-            latest_reply = #{latestReply},
-            is_expired = #{isExpired},
-            likes = #{likes}
+            <if test="latestReply != null">
+                latest_reply = #{latestReply},
+            </if>
+            <if test="isExpired != null">
+                is_expired = #{isExpired},
+            </if>
+            <if test="likes != null">
+                likes = #{likes}
+            </if>
         WHERE m_id = #{m_id}
     </update>
 

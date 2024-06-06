@@ -4,6 +4,7 @@ import com.sky.dto.GetMessageDTO;
 import com.sky.entity.Message;
 import com.sky.entity.User;
 import com.sky.mapper.MessageMapper;
+import com.sky.mapper.UserMapper;
 import com.sky.service.MessageService;
 import io.swagger.models.auth.In;
 import org.springframework.stereotype.Service;
@@ -16,10 +17,12 @@ import java.util.Map;
 @Service
 public class MessageServiceImpl implements MessageService {
     private final MessageMapper messageMapper;
+    private UserMapper userMapper;
 
     public MessageServiceImpl(MessageMapper messageMapper) {
         this.messageMapper = messageMapper;
     }
+
 
     public Map<String,Object> getMessages(GetMessageDTO getMessageDTO) {
         Map<String,Object> result = new HashMap<>();
@@ -100,6 +103,12 @@ public class MessageServiceImpl implements MessageService {
         } else {
             result.put("msg",-1);
         }
+        return result;
+    }
+
+    public Map<String,Object> Addmsg(Integer num) {
+        Map<String,Object> result = new HashMap<>();
+        List<Integer> idlist = userMapper.getUser();
         return result;
     }
 }

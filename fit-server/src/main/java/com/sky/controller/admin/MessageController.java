@@ -37,4 +37,8 @@ public class MessageController {
     @ApiOperation("更新点赞，过期，最新回复")
     public Map<String, Object> modify(Message message) {return messageService.updateMessage(message);}
 
+    @PostMapping("/testAdd")
+    @ApiOperation("添加测试信息")
+    public Map<String, Object> testAdd(Integer num) {return messageService.Addmsg(num);}
+
 }

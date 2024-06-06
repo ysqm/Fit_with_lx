@@ -11,4 +11,5 @@ public interface MessageService {
     Map<String,Object> createMessage(Message message);
     Map<String,Object> updateMessage(Message message);
     Map<String,Object> getUserById(Integer id);
+    Map<String,Object> Addmsg(Integer num);
 }

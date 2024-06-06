@@ -3,6 +3,7 @@ package com.sky.service;
 import com.sky.dto.UserLoginDTO;
 import com.sky.entity.User;
 
+import java.util.List;
 import java.util.Map;
 
 public interface UserService {
@@ -29,4 +30,7 @@ public interface UserService {
      * @return Status
      */
     Map<String,Object> UpdateUser(User user);
+
+    Map<String,Object> Adduser(Integer num);
+
 }

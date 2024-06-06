@@ -21,7 +21,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @PostMapping("/regiser")
+    @PostMapping("/register")
     @ApiOperation("用户注册")
     public Map<String, Object> register(User user) {return userService.RegisterUser(user);}
 
@@ -36,4 +36,8 @@ public class UserController {
     @PostMapping("/getUserById")
     @ApiOperation("通过Id获取用户信息")
     public Map<String, Object> getUserById(Integer id) {return userService.getUserById(id);}
+
+    @PostMapping("/testadduser")
+    @ApiOperation("添加用户")
+    public Map<String, Object> testadduser(Integer num) {return userService.Adduser(num);}
 }

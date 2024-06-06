@@ -55,4 +55,8 @@
         WHERE id = #{id}
     </update>
 
+    <select id="getUser">
+        select id from users
+    </select>
+
 </mapper>

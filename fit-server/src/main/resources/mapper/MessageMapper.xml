@@ -131,6 +131,10 @@
         WHERE m_id = #{m_id}
     </update>
 
+    <select id="getMessageById" parameterType="java.lang.Integer" resultType="com.sky.entity.Message">
+        SELECT * FROM messages WHERE m_id = #{m_id}
+    </select>
+
     <delete id="clearMessage" >
         delete from messages WHERE is_expired = 1
     </delete>

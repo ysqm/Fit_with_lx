@@ -4,7 +4,7 @@ Page({
   data: {
     avatarUrl: defaultAvatarUrl,
     name: '',
-    phone: '',
+    pass: '',
     address: '',
     birthday: '',
     hobby: ''
@@ -25,9 +25,9 @@ Page({
   },
   
   saveAndLogin() {
-    const { avatarUrl, name, phone, address, birthday, hobby } = this.data;
+    const { avatarUrl, name, pass, address, birthday, hobby } = this.data;
 
-    if (!name || !phone || !address || !birthday || !hobby) {
+    if (!name || !pass || !address || !birthday || !hobby) {
       wx.showToast({
         title: '请填写所有信息',
         icon: 'none'
@@ -41,14 +41,14 @@ Page({
     console.log(user_id);
 
     wx.request({
-      url: 'http://localhost:8080/user/update', // 信息修改接口
+      url: 'http://10.16.202.197:8080/user/update', // 信息修改接口
       method: 'POST',
       data: {
         id: user_id,
         avatar: avatarUrl,
         username: name,
         account: name,
-        password: '123456',
+        password: pass,
         wechatId:"",
         registrationTime:"",
         updateTime:"",
@@ -71,7 +71,7 @@ Page({
             title: '修改成功',
             icon: 'success'
           });
-          wx.redirectTo({
+          wx.switchTab({
             url: '/pages/Profile/Profile',
           });
         } else {

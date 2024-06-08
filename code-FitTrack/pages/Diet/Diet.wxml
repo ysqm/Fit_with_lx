@@ -57,9 +57,12 @@
     <text> kcal</text>
   </view>
 
-
-</view>
   <!-- 饼图 -->
-  <view class="container">
+  <view class="charts">
     <ec-canvas style="width: 100%; height: 500px;" id="mychart" canvas-id="mychart" ec="{{ ec }}"></ec-canvas>
   </view>
+
+  <view class="charts">
+    <ec-canvas style="width: 100%; height: 500px;" id="mychart2" canvas-id="mychart2" ec="{{ ec }}"></ec-canvas>
+  </view>
+</view>

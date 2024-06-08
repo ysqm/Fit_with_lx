@@ -88,7 +88,7 @@
           src="/image/jiantou.png"
         />
       </view>
-      <view class="flex-col justify-start items-center text-wrapper_2"><text class="font text_14">退出登录</text></view>
+      <view bind:tap="logout" class="flex-col justify-start items-center text-wrapper_2"><text class="font text_14">退出登录</text></view>
     </view>
   </view>
 </view>

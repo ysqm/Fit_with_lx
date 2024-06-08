@@ -1,0 +1,4 @@
+<!--pages/test/test.wxml-->
+<text>pages/test/test.wxml</text>
+<button bind:tap="authorizeWeRun">授权</button>
+<button bind:tap="getWeRunData">获取数据</button>

@@ -1,5 +1,5 @@
 // gym.js
-const { exercises } = require('./gyms');
+const { exercises } = require('gyms.js');
 
 Page({
   data: {
@@ -68,6 +68,24 @@ Page({
       }, 1000);
     }
   },
+    // 保存运动记录到本地缓存
+    saveExerciseRecord() {
+      const exerciseRecord = {
+        type: this.data.currentExercise,
+        duration: this.data.time,
+        calories: this.data.calories,
+        distance: 0
+      };
+  
+      const existingData = wx.getStorageSync('ExerciseData') || [];
+      existingData.push(exerciseRecord);
+      wx.setStorageSync('ExerciseData', existingData);
+  
+      wx.showToast({
+        title: '运动记录已保存',
+        icon: 'success'
+      });
+    },
 
   stopExercise() {
     if (!this.data.isRunning && !this.data.isPaused) return;
@@ -78,6 +96,7 @@ Page({
       isPaused: false,
       timer: null
     });
+    this.saveExerciseRecord();
   },
 
   resetData() {

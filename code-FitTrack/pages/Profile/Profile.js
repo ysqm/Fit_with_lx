@@ -25,14 +25,14 @@ Page({
       success(res) {
         if (res.confirm) {
           wx.redirectTo({
-            url: '/pages/Login/Login',
+            url: '/pages/Log_in/Log_in',
           });
         }
       }
     });
   },
 
-  onLoad(options) {
+  onShow(options) {
     // 获取用户 ID
     var user_id = wx.getStorageSync('id');
 
@@ -40,7 +40,7 @@ Page({
     if (user_id) {
       // 发送请求获取用户信息
       wx.request({
-        url: 'http://localhost:8080/user/getUserById',
+        url: 'http://10.16.202.197:8080/user/getUserById',
         method: 'POST',
         data: {
           id: user_id

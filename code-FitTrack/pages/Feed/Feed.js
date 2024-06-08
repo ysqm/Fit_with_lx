@@ -3,23 +3,41 @@ Page({
     posts: [
       {
         id: 1,
-        username: 'User1',
+        username: '刘旭',
         avatar: '/image/avatar1.jpg',
         content: '今天完成了一次很棒的健身训练！',
         images: ['/image/workout.jpg'],
         likes: 10,
         liked: false,
-        comments: 5
+        comments: 3
       },
       {
         id: 2,
-        username: 'User2',
+        username: '曹浩',
         avatar: '/image/avatar1.jpg',
         content: '分享一张我减肥后的照片，感觉自己焕然一新！',
         images: ['/image/after.jpg'],
         likes: 20,
         liked: false,
-        comments: 8
+        comments: 3
+      },
+      {
+        id: 3,
+        username: '管理员',
+        avatar: '/image/avatar1.jpg',
+        content: '欢迎来到社区！',
+        likes: 0,
+        liked: false,
+        comments: 0
+      },
+      {
+        id: 4,
+        username: '杨明鑫',
+        avatar: '/image/avatar1.jpg',
+        content: '一起健身',
+        likes: 10,
+        liked: false,
+        comments: 0
       },
       // 添加更多用户分享的内容
     ],
@@ -27,6 +45,7 @@ Page({
     filteredPosts: [], // 用于存储过滤后的帖子列表
     searchKeyword: '', // 用于存储搜索关键字
   },
+  
   onShow: function() {
     // 保存原始帖子列表的副本
     this.setData({

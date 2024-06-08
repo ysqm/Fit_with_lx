@@ -47,7 +47,7 @@ Page({
 
     // 发送注册请求到服务器
     wx.request({
-      url: 'http://localhost:8080/user/register', // 修正后的注册接口
+      url: 'http://10.16.202.197:8080/user/register', // 修正后的注册接口
       method: 'POST',
       data: {
         username: registerUsername,
@@ -87,7 +87,7 @@ Page({
 
     // 发送登录请求到服务器
     wx.request({
-      url: 'http://localhost:8080/user/login', // 登录接口
+      url: 'http://10.16.202.197:8080/user/login', // 登录接口
       method: 'POST',
       data: {
         username: loginUsername,

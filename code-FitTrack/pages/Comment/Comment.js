@@ -16,15 +16,21 @@ Page({
     const comments = [
       {
         id: 1,
-        username: 'User1',
+        username: '曹浩',
         avatar: '/image/avatar1.jpg',
         content: '这是一个很棒的帖子！'
       },
       {
         id: 2,
-        username: 'User2',
+        username: 'User',
         avatar: '/image/avatar1.jpg',
         content: '谢谢你的分享！'
+      },
+      {
+        id: 3,
+        username: 'User',
+        avatar: '/image/avatar1.jpg',
+        content: '为你点赞！'
       },
       // 添加更多评论
     ];

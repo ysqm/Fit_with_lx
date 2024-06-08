@@ -15,7 +15,8 @@
     "pages/Gym/Gym",
     "pages/Post/Post",
     "pages/Comment/Comment",
-    "pages/Advice/Advice"
+    "pages/Advice/Advice",
+    "pages/test/test"
   ],
   "window": {
     "backgroundTextStyle": "light",

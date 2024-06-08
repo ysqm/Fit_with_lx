@@ -1,15 +1,24 @@
+<!-- summary.wxml -->
 <view class="container">
   <view class="header">
     <image class="logo" src="/image/avatar1.jpg" />
-    <text class="title">Static</text>
+    <text class="title">Statistics</text>
   </view>
   <view class="stats">
-    <view class="stat-item" wx:for="{{stats}}" wx:key="index">
-      <view class="stat-label">{{item.label}}</view>
-      <view class="stat-value">{{item.value}}</view>
+    <view class="stat-item">
+      <view class="stat-label">总时间</view>
+      <view class="stat-value">{{Time}}</view>
+    </view>
+    <view class="stat-item">
+      <view class="stat-label">总距离</view>
+      <view class="stat-value">{{Distance}}</view>
+    </view>
+    <view class="stat-item">
+      <view class="stat-label">总热量</view>
+      <view class="stat-value">{{Calories}}</view>
     </view>
   </view>
   <view class="charts">
-    <!-- 这里可以添加图表组件，例如柱状图、饼图等 -->
+    <ec-canvas style="width: 100%; height: 500px;" id="mychart" canvas-id="mychart" ec="{{ ec }}"></ec-canvas>
   </view>
 </view>

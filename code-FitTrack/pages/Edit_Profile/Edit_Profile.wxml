@@ -10,15 +10,15 @@
   <view class="form">
     <!-- 输入框 -->
     <view class="inputs">
-      <!-- 姓名 -->
+      <!-- 昵称 -->
       <view class="item">
-        <view class="title">姓名</view>
-        <input type="text" placeholder="请输入姓名" data-field="name" bindinput="onInput" placeholder-style="placeholder-style"/>
+        <view class="title">昵称</view>
+        <input type="text" placeholder="请输入昵称" data-field="name" bindinput="onInput" placeholder-style="placeholder-style"/>
       </view>
-      <!-- 电话 -->
+      <!-- 密码 -->
       <view class="item">
-        <view class="title">电话</view>
-        <input type="text" placeholder="请输入电话" data-field="phone" bindinput="onInput" placeholder-style="placeholder-style"/>
+        <view class="title">密码</view>
+        <input type="text" placeholder="请输入密码" data-field="pass" bindinput="onInput" placeholder-style="placeholder-style"/>
       </view>
       <!-- 地址 -->
       <view class="item">

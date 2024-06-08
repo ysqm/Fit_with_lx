@@ -115,6 +115,9 @@ Page({
       timer: null
     });
     wx.stopLocationUpdate();
+
+    // 将这次运动记录保存到本地缓存中的 "ExerciseData"
+    this.saveExerciseRecord();
   },
 
   // 重置数据
@@ -206,5 +209,24 @@ Page({
       clearInterval(this.data.timer);
     }
     wx.stopLocationUpdate();
+  },
+
+  // 保存运动记录到本地缓存
+  saveExerciseRecord() {
+    const exerciseRecord = {
+      type: '骑行',
+      duration: this.data.time,
+      calories: this.data.calories,
+      distance: this.data.distance
+    };
+
+    const existingData = wx.getStorageSync('ExerciseData') || [];
+    existingData.push(exerciseRecord);
+    wx.setStorageSync('ExerciseData', existingData);
+
+    wx.showToast({
+      title: '运动记录已保存',
+      icon: 'success'
+    });
   }
 });

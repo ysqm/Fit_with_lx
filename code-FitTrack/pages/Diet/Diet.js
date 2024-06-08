@@ -10,6 +10,7 @@ Page({
     totalCalories: 0,
     startX: 0,
     startY: 0,
+    weeklyCalories: new Array(7).fill(0),
     ec: {
       lazyLoad: true // 延迟加载
     }
@@ -17,12 +18,16 @@ Page({
 
   onLoad(options) {
     this.getDietRecordsByDate();
-    this.initChart();
     this.calculateTotalCalories();
   },
 
   onShow() {
     this.getDietRecordsByDate();
+  },
+  
+  onReady(){
+    this.initChart();
+    this.initChart2();
   },
 
   onUnload() {
@@ -33,11 +38,11 @@ Page({
       totalCalories: this.data.totalCalories,
     });
   },
-
+  
   getDietRecordsByDate() {
     const date = this.getCurrentDate();
     wx.request({
-      url: 'http://10.19.129.17:8080/api/diet/records',
+      url: 'http://10.16.200.252:8080/api/diet/records',
       method: 'GET',
       data: { date: date },
       header: {
@@ -63,6 +68,7 @@ Page({
             dinner
           });
           this.calculateTotalCalories();
+          this.updateWeeklyCalories();
         } else {
           wx.showToast({ title: '获取饮食记录失败', icon: 'none' });
         }
@@ -77,7 +83,7 @@ Page({
   addDietRecord(record) {
     record.totalCalories = this.data.totalCalories; // 确保 totalCalories 和全局一致
     wx.request({
-      url: 'http://10.19.129.17:8080/api/diet/records',
+      url: 'http://10.16.200.252:8080/api/diet/records',
       method: 'POST',
       data: {
         date: record.date,
@@ -106,7 +112,7 @@ Page({
   updateDietRecord(id, record) {
     record.totalCalories = this.data.totalCalories; // 确保 totalCalories 和全局一致
     wx.request({
-      url: `http://10.19.129.17:8080/api/diet/records/${id}`,
+      url: `http://10.16.200.252:8080/api/diet/records/${id}`,
       method: 'PUT',
       data: record,
       header: {
@@ -127,7 +133,7 @@ Page({
 
   deleteDietRecord(id) {
     wx.request({
-      url: `http://10.19.129.17:8080/api/diet/records/${id}`,
+      url: `http://10.16.200.252:8080/api/diet/records/${id}`,
       method: 'DELETE',
       header: {
         'content-type': 'application/x-www-form-urlencoded'
@@ -309,6 +315,107 @@ Page({
       }
     });
     return total;
+  },
+
+  getWeekDates() {
+    const currentDate = new Date();
+    const weekDates = [];
+    const dayOfWeek = currentDate.getDay();
+    const startOfWeek = new Date(currentDate);
+
+    startOfWeek.setDate(currentDate.getDate() - dayOfWeek + 1); // Monday as start of the week
+
+    for (let i = 0; i < 7; i++) {
+      const date = new Date(startOfWeek);
+      date.setDate(startOfWeek.getDate() + i);
+      weekDates.push(`${date.getMonth() + 1}/${date.getDate()}`);
+    }
+
+    return weekDates;
+  },
+
+  initChart2() {
+    this.selectComponent('#mychart2').init((canvas, width, height) => {
+      const chart2 = echarts.init(canvas, null, {
+        width: width,
+        height: height
+      });
+      canvas.setChart(chart2);
+
+      const option = {
+        title: {
+          text: '本周热量摄入',
+          left: 'center'
+        },
+        xAxis: {
+          type: 'category',
+          data: this.getWeekDates()
+        },
+        yAxis: {
+          type: 'value',
+          axisLabel: {
+            formatter: '{value} kcal'
+          }
+        },
+        series: [{
+          data: this.data.weeklyCalories,
+          type: 'bar',
+          label: {
+            show: true,
+            position: 'top'
+          }
+        }]
+      };
+
+      chart2.setOption(option);
+      this.chart2 = chart2;
+      this.updateChart2();
+      return chart2;
+    });
+  },
+
+  updateChart2() {
+    if (this.chart2) {
+      this.chart2.setOption({
+        series: [{
+          data: this.data.weeklyCalories
+        }]
+      });
+    }
+  },
+
+  updateWeeklyCalories() {
+    const weekDates = this.getWeekDates();
+    const weeklyCalories = new Array(7).fill(0);
+
+    // Fetch the data for the current week
+    weekDates.forEach((date, index) => {
+      wx.request({
+        url: 'http://10.16.200.252:8080/api/diet/records',
+        method: 'GET',
+        data: { date: `${new Date().getFullYear()}-${date.replace('/', '-')}` },
+        header: {
+          'content-type': 'application/x-www-form-urlencoded'
+        },
+        success: res => {
+          if (res.statusCode === 200 && Array.isArray(res.data)) {
+            let totalCalories = 0;
+            res.data.forEach(record => {
+              totalCalories += record.calorieIntake;
+            });
+            weeklyCalories[index] = totalCalories;
+          } else {
+            weeklyCalories[index] = 0; // 如果没有数据则设置为0
+          }
+          this.setData({ weeklyCalories }, this.updateChart);
+        },
+        fail: () => {
+          weeklyCalories[index] = 0; // 请求失败也设置为0
+          this.setData({ weeklyCalories }, this.updateChart);
+          wx.showToast({ title: '网络请求失败', icon: 'none' });
+        }
+      });
+    });
   },
 
   touchStart(event) {

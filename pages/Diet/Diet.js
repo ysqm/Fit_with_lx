@@ -1,5 +1,5 @@
-// pages/diet/Diet.js
-import * as echarts from '../../ec-canvas/echarts';
+// pages/Diet/Diet.js
+const echarts = require('../../ec-canvas/echarts');
 const foods = require('../../utils/foods.js');
 
 Page({

@@ -1,3 +1,15 @@
 {
-  "dependencies": {}
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "^wx$": "<rootDir>/__mocks__/wx.js"
+    }
+  }
+  ,
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "miniprogram-simulate": "^1.6.1"
+  }
 }
